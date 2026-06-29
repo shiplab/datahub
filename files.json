@@ -24,6 +24,13 @@
           "description": "Report of the shielding effect study on Gunnerus",
           "path": "Projects/Gunnerus/1-s2.0-S0029801824035273-main.pdf"
         }
+        ,
+        {
+          "name": "toobigdata",
+          "type": "file",
+          "description": "list of the files that are too big for github",
+          "path": "Projects/Gunnerus/toobigdata"
+        }
       ]
     }
   ]
