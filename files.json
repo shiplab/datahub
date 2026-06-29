@@ -1,0 +1,24 @@
+{
+  "name": "Projects",
+  "type": "folder",
+  "children": [
+    {
+      "name": "Gunnerus",
+      "type": "folder",
+      "children": [
+        {
+          "name": "report.pdf",
+          "type": "file",
+          "description": "Mission report 2026",
+          "path": "Projects/Gunnerus/report.pdf"
+        },
+        {
+          "name": "drawings.pdf",
+          "type": "file",
+          "description": "General arrangement drawings",
+          "path": "Projects/Gunnerus/drawings.pdf"
+        }
+      ]
+    }
+  ]
+}
