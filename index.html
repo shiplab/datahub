@@ -46,7 +46,7 @@
         label.className = "folder";
         label.textContent = node.name;
         const ul = document.createElement("ul");
-        ul.style.display = "none";
+        label.classList.add("open");
         (node.children || []).forEach(child => ul.appendChild(renderNode(child)));
         label.addEventListener("click", () => {
           const open = ul.style.display !== "none";
