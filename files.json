@@ -17,6 +17,12 @@
           "type": "file",
           "description": "General arrangement drawings",
           "path": "Projects/Gunnerus/drawings.pdf"
+        },
+        {
+          "name": "1-s2.0-S0029801824035273-main",
+          "type": "file",
+          "description": "Report of the shielding effect study on Gunnerus",
+          "path": "Projects/Gunnerus/1-s2.0-S0029801824035273-main.pdf"
         }
       ]
     }
