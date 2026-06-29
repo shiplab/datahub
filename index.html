@@ -9,30 +9,71 @@
     h1 { font-size: 1.5rem; margin-bottom: 0.2em; }
     h2 { font-size: 1rem; font-weight: normal; color: #555; margin-top: 0; }
     hr { border: none; border-top: 1px solid #ccc; margin: 1.5em 0; }
-    p { line-height: 1.6; }
-    ul { padding-left: 1.2em; line-height: 1.8; }
+    ul { list-style: none; padding-left: 1.2em; margin: 0.2em 0; }
+    li { margin: 0.3em 0; }
+    .folder { cursor: pointer; font-weight: bold; }
+    .folder::before { content: "▶ "; font-size: 0.7em; }
+    .folder.open::before { content: "▼ "; font-size: 0.7em; }
+    .file a { color: #1a0dab; text-decoration: none; }
+    .file a:hover { text-decoration: underline; }
+    .desc { color: #666; font-size: 0.9em; margin-left: 0.5em; }
   </style>
 </head>
 <body>
- 
+
   <h1>Ship Design, Construction &amp; Operation Data Hub</h1>
   <h2>Open Data Repository for Ship Design, Construction &amp; Operation Files</h2>
   <hr>
- 
+
   <p>An initiative by <strong>NTNU-IV-IHB</strong> &mdash; 29 Jun 2026</p>
- 
-  <p><strong>Contributors:</strong></p>
-  <ul>
-    <li>Henrique Gaspar (NTNU)</li>
-    <li>Jisang Ha (NTNU)</li>
-    <li>Leyan Touati (ISEN)</li>
-    <li>Anas Sadik (ISEN)</li>
-    <li>Louise Hope-Rapp (ENSTA)</li>
-  </ul>
- 
+  <p><strong>Contributors:</strong> Henrique Gaspar (NTNU), Jisang Ha (NTNU), Leyan Touati (ISEN), Anas Sadik (ISEN), Louise Hope-Rapp (ENSTA)</p>
   <hr>
-  <p><em>To be updated.</em></p>
- 
+
+  <div id="tree">Loading...</div>
+
+  <script>
+    async function loadTree() {
+      const res = await fetch("files.json");
+      const data = await res.json();
+      document.getElementById("tree").innerHTML = "";
+      document.getElementById("tree").appendChild(renderNode(data));
+    }
+
+    function renderNode(node) {
+      const li = document.createElement("li");
+      if (node.type === "folder") {
+        const label = document.createElement("span");
+        label.className = "folder";
+        label.textContent = node.name;
+        const ul = document.createElement("ul");
+        ul.style.display = "none";
+        (node.children || []).forEach(child => ul.appendChild(renderNode(child)));
+        label.addEventListener("click", () => {
+          const open = ul.style.display !== "none";
+          ul.style.display = open ? "none" : "block";
+          label.classList.toggle("open", !open);
+        });
+        li.appendChild(label);
+        li.appendChild(ul);
+      } else {
+        li.className = "file";
+        const a = document.createElement("a");
+        a.href = node.path;
+        a.textContent = node.name;
+        a.target = "_blank";
+        li.appendChild(a);
+        if (node.description) {
+          const span = document.createElement("span");
+          span.className = "desc";
+          span.textContent = "— " + node.description;
+          li.appendChild(span);
+        }
+      }
+      return li;
+    }
+
+    loadTree();
+  </script>
+
 </body>
 </html>
- 
