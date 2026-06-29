@@ -23,14 +23,57 @@
           "type": "file",
           "description": "Report of the shielding effect study on Gunnerus",
           "path": "Projects/Gunnerus/1-s2.0-S0029801824035273-main.pdf"
-        }
-        ,
+        },
         {
           "name": "toobigdata",
           "type": "file",
           "description": "list of the files that are too big for github",
           "path": "Projects/Gunnerus/toobigdata"
-        }
+        },
+        {
+          "name": "hull",
+          "type": "folder",
+          "children": [ 
+            {
+              "name": "vessel data from kongsberg seapath",
+              "type": "folder",
+              "description": "file containing the hull mouvement data ",
+              "path": "Projects/Gunnerus/hull/vessel data from kongsberg seapath"
+            }
+          ]
+          "description": "files containing the hull mouvement data ",
+          "path": "Projects/Gunnerus/hull"
+        },
+        {
+          "name": "crane tip",
+          "type": "folder",
+          "children": [
+            {
+              "name": "Crane accelerometers data",
+              "type": "folder",
+              "description": "file containing the crane tip mouvement data ",
+              "path": "Projects/Gunnerus/crane tip/Crane accelerometers data"
+            }
+          ]
+          "description": "files containing the crane tip mouvement data ",
+          "path": "Projects/Gunnerus/crane tip"
+        },
+        {
+          "name": "crane arm and engine",
+          "type": "folder",
+          "children": [
+             {
+              "name": "vessel data from nuc PC ",
+              "type": "folder",
+              "description": "file containing the crane arm mouvement data and engines data ",
+              "path": "Projects/Gunnerus/crane arm and engine/vessel data from nuc PC"
+            }
+            
+          ]
+          "description": "files containing the crane arm mouvement data and engines data ",
+          "path": "Projects/Gunnerus/crane arm and engine"
+        },
+        
       ]
     }
   ]
