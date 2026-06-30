@@ -33,14 +33,14 @@
         {
           "name": "hull",
           "type": "folder",
-          "children": [ 
+          "children": [
             {
               "name": "vessel data from kongsberg seapath",
               "type": "folder",
               "description": "file containing the hull mouvement data ",
               "path": "Projects/Gunnerus/hull/vessel data from kongsberg seapath"
             }
-          ]
+          ],
           "description": "files containing the hull mouvement data ",
           "path": "Projects/Gunnerus/hull"
         },
@@ -54,7 +54,7 @@
               "description": "file containing the crane tip mouvement data ",
               "path": "Projects/Gunnerus/crane tip/Crane accelerometers data"
             }
-          ]
+          ],
           "description": "files containing the crane tip mouvement data ",
           "path": "Projects/Gunnerus/crane tip"
         },
@@ -62,18 +62,16 @@
           "name": "crane arm and engine",
           "type": "folder",
           "children": [
-             {
+            {
               "name": "vessel data from nuc PC ",
               "type": "folder",
               "description": "file containing the crane arm mouvement data and engines data ",
               "path": "Projects/Gunnerus/crane arm and engine/vessel data from nuc PC"
             }
-            
-          ]
+          ],
           "description": "files containing the crane arm mouvement data and engines data ",
           "path": "Projects/Gunnerus/crane arm and engine"
-        },
-        
+        }
       ]
     }
   ]
