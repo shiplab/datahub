@@ -5,8 +5,8 @@
     {
       "name": "Gunnerus",
       "type": "folder",
-      "description": "files containing the crane arm mouvement data and engines data ",
-      "path": "Projects/Gunnerus/crane arm and engine"
+      "description": "Files containing Gunnerus vessel, crane, engine and motion data.",
+      "path": "Projects/Gunnerus",
       "children": [
        
         {
@@ -18,37 +18,37 @@
         {
           "name": "crane_accelerometres_data1.csv",
           "type": "file",
-          "description": "",
+          "description": "First crane accelerometer and motion dataset.",
           "path": "Projects/Gunnerus/crane_accelerometres_data1.csv"
         },
         {
           "name": "crane_accelerometres_data2.csv",
           "type": "file",
-          "description": "",
+          "description": "Second crane accelerometer and motion dataset.",
           "path": "Projects/Gunnerus/crane_accelerometres_data2.csv"
         },
         {
           "name": "time_series_motion_prediction_data1.csv",
           "type": "file",
-          "description": "",
+          "description": "First vessel motion prediction time-series dataset.",
           "path": "Projects/Gunnerus/time_series_motion_prediction_data1.csv"
         },
         {
           "name": "time_series_motion_prediction_data2.csv",
           "type": "file",
-          "description": "",
+          "description": "Second vessel motion prediction time-series dataset.",
           "path": "Projects/Gunnerus/time_series_motion_prediction_data2.csv"
         },
         {
           "name": "vessel_data_from_NUC_Gunnerus_W44.csv",
           "type": "file",
-          "description": "",
+          "description": "Gunnerus crane, engine, navigation and wave data from the NUC computer.",
           "path": "Projects/Gunnerus/vessel_data_from_NUC_Gunnerus_W44.csv"
         },
         {
           "name": "vessel_data_from_nuc_pc_w44_daily_data.csv",
           "type": "file",
-          "description": "",
+          "description": "Daily Gunnerus navigation and vessel motion data from the NUC computer.",
           "path": "Projects/Gunnerus/vessel_data_from_nuc_pc_w44_daily_data.csv"
         }
         ]

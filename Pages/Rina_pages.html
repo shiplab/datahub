@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RINA Vessels</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="rina-page">
+  <header class="rina-topbar">
+    <a class="back-link" href="../index.html">Back to dashboard</a>
+    <h1>RINA Significant Ships — Vol. 2018</h1>
+    <div class="legend">
+      <span class="legend-mapped">Mapped to DNV</span>
+      <span class="legend-unmapped">DNV not found</span>
+    </div>
+  </header>
+
+  <main class="rina-layout">
+    <section class="vessel-panel">
+      <div class="panel-heading">
+        <h2>Vessels and information</h2>
+        <p>Select a vessel to open its information.</p>
+      </div>
+
+      <div id="vessel-accordions" class="vessel-accordions"></div>
+
+      <div class="download-bar">
+        <a id="download-json" class="download-button disabled" aria-disabled="true">Get raw JSON</a>
+      </div>
+    </section>
+
+    <section class="dnv-panel">
+      <div class="panel-heading">
+        <div class="dnv-heading-row">
+          <div>
+            <h2>Generic Product Model — VIS</h2>
+            <p>Complete DNV hierarchy with vessel values.</p>
+          </div>
+          <span class="version-badge">3-10a</span>
+        </div>
+      </div>
+
+      <div class="tree-search-box">
+        <input id="tree-search" type="search" placeholder="Search a DNV code or name" autocomplete="off">
+        <div id="tree-search-results" class="tree-search-results"></div>
+      </div>
+
+      <div id="tree-status" class="tree-status">Loading complete DNV hierarchy...</div>
+      <div id="dnv-tree" class="dnv-tree"></div>
+    </section>
+  </main>
+
+  <script src="../Scripts/rina-page.js"></script>
+</body>
+</html>
