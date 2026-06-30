@@ -1,0 +1,1231 @@
+{
+  "document": {
+    "filename": "NEW GOLDEN BRIDGE VII.pdf",
+    "vessel_name": "NEW GOLDEN BRIDGE VII",
+    "vessel_code": "NEW-GOLDEN-BRIDGE-VII",
+    "data_family": "design_data",
+    "document_type": "tank_plan",
+    "source_file_id": 51,
+    "version": 1,
+    "extraction_source": "AI"
+  },
+  "summary": "Editable D2 JSON draft for human review.",
+  "general_information": "The NEW GOLDEN BRIDGE VII is a passenger vessel built by Hyundai Mipo Dockyard Co., Ltd. in Korea, with a gross tonnage of 30,322gt and a deadweight of 7,241dwt. It has a length of 196.13m, breadth of 27.00m, and depth of 9.40m to main deck. The vessel is designed for passenger and vehicle transportation between China and Korea, with a service speed of 23.50knots.",
+  "value_groups": [
+    {
+      "group_name": "shipbuilder",
+      "display_name": "Shipbuilder",
+      "items": [
+        {
+          "attribute_name": "shipbuilder",
+          "display_name": "Shipbuilder",
+          "value_text": "Hyundai Mipo Dockyard Co., Ltd",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "vessel_s_name",
+      "display_name": "Vessel S Name",
+      "items": [
+        {
+          "attribute_name": "vessel_s_name",
+          "display_name": "Vessel's name",
+          "value_text": "New Golden Bridge VII",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "hull_no",
+      "display_name": "Hull No",
+      "items": [
+        {
+          "attribute_name": "hull_no",
+          "display_name": "Hull No",
+          "value_text": "8249",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "owner_operator",
+      "display_name": "Owner Operator",
+      "items": [
+        {
+          "attribute_name": "owner_operator",
+          "display_name": "Owner/Operator",
+          "value_text": "Weidong Ferries",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "country",
+      "display_name": "Country",
+      "items": [
+        {
+          "attribute_name": "country",
+          "display_name": "Country",
+          "value_text": "Korea & China",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "country",
+          "display_name": "Country",
+          "value_text": "Korea",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "designer",
+      "display_name": "Designer",
+      "items": [
+        {
+          "attribute_name": "designer",
+          "display_name": "Designer",
+          "value_text": "Hyundai Mipo Dockyard Co., Ltd",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "model_test_establishment",
+      "display_name": "Model Test Establishment",
+      "items": [
+        {
+          "attribute_name": "model_test_establishment_used",
+          "display_name": "used",
+          "value_text": "KRISO",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "unclassified.pending_review"
+    },
+    {
+      "group_name": "flag",
+      "display_name": "Flag",
+      "items": [
+        {
+          "attribute_name": "flag",
+          "display_name": "Flag",
+          "value_text": "Panama",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/110/111/111.8/111.81/H403",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "imo",
+      "display_name": "Imo",
+      "items": [
+        {
+          "attribute_name": "imo_number",
+          "display_name": "number",
+          "value_text": "9813254",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/001",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "total_number_of",
+      "display_name": "Total Number Of",
+      "items": [
+        {
+          "attribute_name": "total_number_of_sister_ships_already_completed_excluding_ship_presented",
+          "display_name": "sister ships already completed (excluding ship presented)",
+          "value_text": "nil",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "total_number_of_sister_ships_still_on_order",
+          "display_name": "sister ships still on order",
+          "value_text": "nil",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "technical_particulars_length",
+      "display_name": "Technical Particulars Length",
+      "items": [
+        {
+          "attribute_name": "technical_particulars_length_oa",
+          "display_name": "oa",
+          "value_text": "196.13m",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "technical_particulars_length_bp",
+          "display_name": "bp",
+          "value_text": "178.00m",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "technical_particulars_breadth",
+      "display_name": "Technical Particulars Breadth",
+      "items": [
+        {
+          "attribute_name": "technical_particulars_breadth_moulded",
+          "display_name": "moulded",
+          "value_text": "27.00m",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "depth",
+      "display_name": "Depth",
+      "items": [
+        {
+          "attribute_name": "depth_moulded_to_main_deck",
+          "display_name": "Moulded To main deck",
+          "value_text": "9.40m",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "depth_moulded_to_upper_deck",
+          "display_name": "Moulded To upper deck",
+          "value_text": "14.85m",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "width_of_double_skin",
+      "display_name": "Width Of Double Skin",
+      "items": [
+        {
+          "attribute_name": "width_of_double_skin_side",
+          "display_name": "Side",
+          "value_text": "5.10m",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/110/111/111.8/111.81/H403",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "width_of_double_skin_bottom",
+          "display_name": "Bottom",
+          "value_text": "2.00m",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/120/121/121i/H341/H341.4/H341.43",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "draught",
+      "display_name": "Draught",
+      "items": [
+        {
+          "attribute_name": "draught_scantling",
+          "display_name": "Scantling",
+          "value_text": "6.60 m",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "draught_design",
+          "display_name": "Design",
+          "value_text": "6.60 m",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H131/H131.6/H131.61",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "gross",
+      "display_name": "Gross",
+      "items": [
+        {
+          "attribute_name": "gross",
+          "display_name": "Gross",
+          "value_text": "30,322gt",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/106/106.4",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "tonnage",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "displacement",
+      "display_name": "Displacement",
+      "items": [
+        {
+          "attribute_name": "displacement",
+          "display_name": "Displacement",
+          "value_text": "18,480t",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "tonnage",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "deadweight",
+      "display_name": "Deadweight",
+      "items": [
+        {
+          "attribute_name": "deadweight_design",
+          "display_name": "Design",
+          "value_text": "7,241dwt",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/240/242/C993",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "deadweight_scantling",
+          "display_name": "Scantling",
+          "value_text": "7,241dwt",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/240/242/C993",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "deadweight_speed_service_85_mcr_output",
+          "display_name": "Speed, service (85%MCR output)",
+          "value_text": "23.50knots",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/240/242/C993",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "tonnage",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "bunkers",
+      "display_name": "Bunkers",
+      "items": [
+        {
+          "attribute_name": "bunkers_heavy_oil",
+          "display_name": "Heavy oil",
+          "value_text": "720m^3",
+          "data_kind": "capacity_or_tank",
+          "DNV_source": "/dnv-v2/vis-3-10a/1300a/1320/1321/1321i/1321.1/U101/U101.2/U101.24/U101.241/G315",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "bunkers_diesel_oil",
+          "display_name": "Diesel oil",
+          "value_text": "280m^3",
+          "data_kind": "capacity_or_tank",
+          "DNV_source": "/dnv-v2/vis-3-10a/1300a/1320/1321/1321i/1321.1/U101/U101.2/U101.24/U101.241/G315",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "bunkers_water_ballast",
+          "display_name": "Water ballast",
+          "value_text": "3,200m^3 Daily fuel consumption m^3",
+          "data_kind": "capacity_or_tank",
+          "DNV_source": "/dnv-v2/vis-3-10a/1300a/1320/1321/1321i/1321.1/U101/U101.2/U101.24/U101.241/G315",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "bunkers_main_engine_only",
+          "display_name": "Main engine only",
+          "value_text": "86.7t/day",
+          "data_kind": "component_or_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/1300a/1320/1321/1321i/1321.1/U101/U101.2/U101.24/U101.241/G315",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.tank_arrangement"
+    },
+    {
+      "group_name": "classification_society_and_notations",
+      "display_name": "Classification Society And Notations",
+      "items": [
+        {
+          "attribute_name": "classification_society_and_notations",
+          "display_name": "Classification society and notations",
+          "value_text": "Korean Register, +KRS1-Passenger Ship Container/",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/006",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "high_tensile_steel",
+      "display_name": "High Tensile Steel",
+      "items": [
+        {
+          "attribute_name": "high_tensile_steel_used_in_construction",
+          "display_name": "% high-tensile steel used in construction",
+          "value_text": "26",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "krm1_cma_bwt",
+      "display_name": "Krm1 Cma Bwt",
+      "items": [
+        {
+          "attribute_name": "krm1_cma_bwt_heel_control_equipment",
+          "display_name": "+Krm1-Cma, Bwt Heel control equipment",
+          "value_text": "Anti-heeling pump",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.machinery_systems",
+          "DNV_source": "/dnv-v2/vis-3-10a/300a/350/353",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "krm1_cma_bwt_roll_stabilisation_equipment",
+          "display_name": "+Krm1-Cma, Bwt Roll-stabilisation equipment",
+          "value_text": "Fin stabiliser",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "main_engines",
+      "display_name": "Main Engines",
+      "items": [
+        {
+          "attribute_name": "main_engines_design",
+          "display_name": "Design",
+          "value_text": "HiMSEN",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_model",
+          "display_name": "Model",
+          "value_text": "12H46/60VP(Tier II)",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_manufacturer",
+          "display_name": "Manufacturer",
+          "value_text": "HHI Engine & Machinery Division",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_number",
+          "display_name": "Number",
+          "value_text": "2",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/002/002.4",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_type_of_fuel",
+          "display_name": "Type of fuel",
+          "value_text": "HFO",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/620/620.1/M201",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_output_of_each_engine",
+          "display_name": "Output of each engine",
+          "value_text": "12,000kW Gearboxes kW",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_make",
+          "display_name": "Make",
+          "value_text": "Renk",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_model",
+          "display_name": "Model",
+          "value_text": "RSH-1060",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_output_speed",
+          "display_name": "Output speed",
+          "value_text": "170.4rpm",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.propulsion_steering"
+    },
+    {
+      "group_name": "propellers",
+      "display_name": "Propellers",
+      "items": [
+        {
+          "attribute_name": "propellers_material",
+          "display_name": "Material",
+          "value_text": "Ni-Al-Bronze",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_designer_manufacturer",
+          "display_name": "Designer/Manufacturer",
+          "value_text": "W\u00e4rtsil\u00e4",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.general_vessel_information",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_number",
+          "display_name": "Number",
+          "value_text": "2",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_fixed_controllable_pitch",
+          "display_name": "Fixed/controllable pitch",
+          "value_text": "Controllable",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_diameter",
+          "display_name": "Diameter",
+          "value_text": "4.6m",
+          "data_kind": "principal_dimension",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_speed",
+          "display_name": "Speed",
+          "value_text": "170.4rpm Main-engine driven alternators rpm",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_make_type",
+          "display_name": "Make/type",
+          "value_text": "HHI / HFC7 568-04P",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_output_speed_of_each_set",
+          "display_name": "Output/speed of each set",
+          "value_text": "1,800rpm for both rpm",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "diesel_driven_alternators",
+      "display_name": "Diesel Driven Alternators",
+      "items": [
+        {
+          "attribute_name": "diesel_driven_alternators_number",
+          "display_name": "Diesel-Driven Alternators Number",
+          "value_text": "4",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/220/221/221.4/CS2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_engine_make_type",
+          "display_name": "Diesel-Driven Alternators Engine make/type",
+          "value_text": "Yanmar",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H131/H131.6/H131.61",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_type_of_fuel",
+          "display_name": "Diesel-Driven Alternators Type of fuel",
+          "value_text": "MDO",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/620/620.1/M201",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_output_speed_of_each_set",
+          "display_name": "Diesel-Driven Alternators Output/speed of each set",
+          "value_text": "1,300kW",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/864/864.1/864.11/GS9/G71/G71.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_alternator_make_type",
+          "display_name": "Diesel-Driven Alternators Alternator make/type",
+          "value_text": "HHI",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_output_speed_of_each_set",
+          "display_name": "Diesel-Driven Alternators Output/speed of each set",
+          "value_text": "1,200kW",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/864/864.1/864.11/GS9/G71/G71.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1
+    },
+    {
+      "group_name": "exhaust_gas_scrubbing_equipment",
+      "display_name": "Exhaust Gas Scrubbing Equipment",
+      "items": [
+        {
+          "attribute_name": "exhaust_gas_scrubbing_equipment_manufacturer",
+          "display_name": "Exhaust-Gas Scrubbing Equipment Manufacturer",
+          "value_text": "W\u00e4rtsil\u00e4",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.machinery_systems",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/220/221/221.4/CS2/CS2d",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "exhaust_gas_scrubbing_equipment_type",
+          "display_name": "Exhaust-Gas Scrubbing Equipment Type",
+          "value_text": "Open loop SOx scrubber",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.machinery_systems",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1030/1032/1032.2/1032.2i/CS20/C641/C641.2/C641.24",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "exhaust_gas_scrubbing_equipment_on_main_engines",
+          "display_name": "Exhaust-Gas Scrubbing Equipment On main engines",
+          "value_text": "To be applied",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/1200a/1290/1291/C1051/C1051.7/CS1/C101/C101.3/C101.3i/C101.31/C101.311/C467/C467.4",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "exhaust_gas_scrubbing_equipment_on_auxiliary_engines",
+          "display_name": "Exhaust-Gas Scrubbing Equipment On auxiliary engines",
+          "value_text": "To be applied",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "boilers",
+      "display_name": "Boilers",
+      "items": [
+        {
+          "attribute_name": "boilers_number",
+          "display_name": "Number",
+          "value_text": "3",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H121",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "boilers_type",
+          "display_name": "Type",
+          "value_text": "1x Aux. boiler, 2x Exh.gas boiler",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "boilers_make",
+          "display_name": "Make",
+          "value_text": "Kangrim",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "boilers_output_each_boiler",
+          "display_name": "Output, each boiler",
+          "value_text": "Aux. boiler: 4,000kg/h, kg/hr",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "boilers_exh_gas_boiler",
+          "display_name": "Exh. gas boiler",
+          "value_text": "2,000kg/h kg/hr",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10/C704",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "mooring_equipment",
+      "display_name": "Mooring Equipment",
+      "items": [
+        {
+          "attribute_name": "mooring_equipment_number",
+          "display_name": "Number",
+          "value_text": "7",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "mooring_equipment_type",
+          "display_name": "Type",
+          "value_text": "Hydraulic",
+          "DNV_source": "/dnv-v2/vis-3-10a/300a/320/322",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "mooring_equipment_make",
+      "display_name": "Mooring Equipment Make",
+      "items": [
+        {
+          "attribute_name": "mooring_equipment_make",
+          "display_name": "Mooring Equipment Make",
+          "value_text": "Flutek",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "special_lifesaving_equipment",
+      "display_name": "Special Lifesaving Equipment",
+      "items": [
+        {
+          "attribute_name": "special_lifesaving_equipment_number_of_each_and_capacity",
+          "display_name": "Number of each and capacity",
+          "value_text": "4x lifeboats, each 60 persons",
+          "data_kind": "capacity_or_tank",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_make",
+          "display_name": "Make",
+          "value_text": "DSB Engineering",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/500a/510/514/514.4/E86",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_type",
+          "display_name": "Type",
+          "value_text": "Gravity luffing",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_mes_vertical_sloping_chutes",
+          "display_name": "MES Vertical / sloping chutes",
+          "value_text": "2 x vertical Containers",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.6/861.61/G109/G109.1/GS6/G106",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_total_teu_capacity",
+          "display_name": "Total TEU capacity",
+          "value_text": "325",
+          "data_kind": "capacity_or_tank",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.4",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_on_deck",
+          "display_name": "On deck",
+          "value_text": "325",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/120/124/H344/H344.1/H344.1i",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_reefer_plugs",
+          "display_name": "Reefer plugs",
+          "value_text": "100 Tiers/rows (maximum)",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/500a/510/514/514.4/E86",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_on_deck",
+          "display_name": "On deck",
+          "value_text": "1 Vehicles",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.4",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_number_of_vehicle_decks",
+          "display_name": "Number of vehicle decks",
+          "value_text": "3",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/110/112/H311/H311.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_total_lane_length",
+          "display_name": "Total lane length",
+          "value_text": "2,307",
+          "data_kind": "principal_dimension",
+          "taxonomy_node_id": "design_data.principal_dimensions",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_total_cars",
+          "display_name": "Total cars",
+          "value_text": "508 private cars, 137 trailers Doors/ramps/lifts/moveable car decks private",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/002",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_number_of_each",
+          "display_name": "Number of each",
+          "value_text": "1 stern ramp, 1 side ramp, 1 moveable ramp, 1 tiltable ramp stern",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_type",
+          "display_name": "Type",
+          "value_text": "Moveable ramp,",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.safety_lifesaving",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "special_lifesaving_equipment_designer",
+          "display_name": "Designer",
+          "value_text": "MacGregor",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.general_vessel_information",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "water_ballast_treatment_system",
+      "display_name": "Water Ballast Treatment System",
+      "items": [
+        {
+          "attribute_name": "water_ballast_treatment_system_make",
+          "display_name": "Make",
+          "value_text": "Techcross",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H131/H131.6/H131.61",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "water_ballast_treatment_system_capacity",
+          "display_name": "Capacity",
+          "value_text": "600m^3/h",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H131/H131.6/H131.61",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.tank_arrangement"
+    },
+    {
+      "group_name": "complement",
+      "display_name": "Complement",
+      "items": [
+        {
+          "attribute_name": "complement_officers",
+          "display_name": "Officers",
+          "value_text": "16",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/080/081/081.1/F201/F201.1/F201.11",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_crew",
+          "display_name": "Crew",
+          "value_text": "56 Passengers",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_total",
+          "display_name": "Total",
+          "value_text": "724",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_number_of_cabins",
+          "display_name": "Number of cabins",
+          "value_text": "122",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_stern_appendages_special_rudders",
+          "display_name": "Stern appendages/special rudders",
+          "value_text": "2 full spade rudder Bow thrusters",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/864/864.1/864.11/GS9/G71/G71.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make",
+          "display_name": "Make",
+          "value_text": "KTE",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_number",
+          "display_name": "Number",
+          "value_text": "1",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_output_each",
+          "display_name": "Output (each)",
+          "value_text": "1,400kW Stern thrusters kW",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_output_each",
+          "display_name": "Output (each)",
+          "value_text": "1,070kW Fire detection system kW",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make",
+          "display_name": "Make",
+          "value_text": "Consilium Marine",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_type",
+          "display_name": "Type",
+          "value_text": "SG37260 Fire extinguishing systems",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_vehicle_spaces",
+          "display_name": "Vehicle spaces",
+          "value_text": "Water spray /High pressure CO2",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make_type",
+          "display_name": "Make/Type",
+          "value_text": "Iljin and Co. Ltd/ NK",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_engine_room",
+          "display_name": "Engine room",
+          "value_text": "Water mist",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/420/420i/421/421.2/HS5",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make_type",
+          "display_name": "Make/Type",
+          "value_text": "Tyco",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_cabins",
+          "display_name": "Cabins",
+          "value_text": "Auto sprinkler",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make_type",
+          "display_name": "Make/Type",
+          "value_text": "Iljin and Co. Ltd",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/740/744",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_public_spaces",
+          "display_name": "Public spaces",
+          "value_text": "Auto sprinkler",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make_type",
+          "display_name": "Make/Type",
+          "value_text": "Iljin and Co Ltd",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/740/744",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "radars",
+      "display_name": "Radars",
+      "items": [
+        {
+          "attribute_name": "radars_number",
+          "display_name": "Number",
+          "value_text": "2",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "radars_make",
+          "display_name": "Make",
+          "value_text": "Furuno",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2/NS2d",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "radars_model_s",
+          "display_name": "Model(s)",
+          "value_text": "FAR-2837S (S band radar), FAR-2837 (X band radar)",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "radars_new_golden_bridge_vii",
+          "display_name": "NEW GOLDEN BRIDGE VII",
+          "value_text": "not specified in document Ro-pax",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.navigation_communication"
+    },
+    {
+      "group_name": "contract",
+      "display_name": "Contract",
+      "items": [
+        {
+          "attribute_name": "contract_date",
+          "display_name": "date",
+          "value_text": "22 July 2016",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "launch_float_out",
+      "display_name": "Launch Float Out",
+      "items": [
+        {
+          "attribute_name": "launch_float_out_date",
+          "display_name": "Launch/float-out date",
+          "value_text": "27 April 2018",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/002",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "delivery",
+      "display_name": "Delivery",
+      "items": [
+        {
+          "attribute_name": "delivery_date",
+          "display_name": "date",
+          "value_text": "10 September 2018",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/002/002.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    }
+  ],
+  "tanks": [],
+  "components": [],
+  "detected_vessels": [],
+  "warnings": [
+    "PDF text extraction succeeded.",
+    "AI context selected page(s): 1, 2.",
+    "Automatic route selected document_type=tank_plan, data_family=design_data.",
+    "DNV source index refreshed from Excel with 7277 entries.",
+    "The local AI did not return usable JSON, so the app created a structured editable draft from parser data."
+  ],
+  "missing_information": [],
+  "taxonomy_extension_requests": [],
+  "dnv_gmod_reference": {
+    "standard": {
+      "name": "DNV_GMOD_INTERNAL_DEFAULT",
+      "version": "0.1",
+      "description": "Default maritime taxonomy used by the application for vessel data extraction, validation and classification.",
+      "rule": "AI must classify extracted data using this taxonomy first. Missing categories must be proposed as extensions, not invented as final nodes."
+    },
+    "unknown_node": "unclassified.pending_review"
+  },
+  "ai_status": "AI_JSON_UNAVAILABLE"
+}

@@ -1,0 +1,764 @@
+{
+  "document": {
+    "filename": "SUNFLOWER SATSUMA.pdf",
+    "vessel_name": "SUNFLOWER SATSUMA",
+    "vessel_code": "SUNFLOWER-SATSUMA",
+    "data_family": "design_data",
+    "document_type": "principal_dimensions",
+    "source_file_id": 58,
+    "version": 1,
+    "extraction_source": "AI"
+  },
+  "summary": "Editable D2 JSON draft for human review.",
+  "general_information": "The SUNFLOWER SATSUMA is a ro-pax vessel built by Japan Marine United Corporation in April 2018. It has a length of 192m, breadth of 27m, and draught of 6.8m. The vessel has hybrid diesel/diesel-electric propulsion system and can accommodate 709 passengers, 121 trucks, and 134 cars. Its service speed is 23 knots.",
+  "value_groups": [
+    {
+      "group_name": "shipbuilder",
+      "display_name": "Shipbuilder",
+      "items": [
+        {
+          "attribute_name": "shipbuilder",
+          "display_name": "Shipbuilder",
+          "value_text": "Japan Marine United Corporation",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "vessel_s_name",
+      "display_name": "Vessel S Name",
+      "items": [
+        {
+          "attribute_name": "vessel_s_name",
+          "display_name": "Vessel's name",
+          "value_text": "Sunflower Satsuma",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/001",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "hull_no",
+      "display_name": "Hull No",
+      "items": [
+        {
+          "attribute_name": "hull_no",
+          "display_name": "Hull No",
+          "value_text": "5138",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.3/861.31/G53/G53.1",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "owner_operator",
+      "display_name": "Owner Operator",
+      "items": [
+        {
+          "attribute_name": "owner_operator",
+          "display_name": "Owner/Operator",
+          "value_text": "Ferry Sunflower Ltd",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/004/004.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "country",
+      "display_name": "Country",
+      "items": [
+        {
+          "attribute_name": "country",
+          "display_name": "Country",
+          "value_text": "Japan",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000/007",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "designer",
+      "display_name": "Designer",
+      "items": [
+        {
+          "attribute_name": "designer",
+          "display_name": "Designer",
+          "value_text": "Japan Marine United Corporation",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H131/H131.6/H131.61",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "flag",
+      "display_name": "Flag",
+      "items": [
+        {
+          "attribute_name": "flag",
+          "display_name": "Flag",
+          "value_text": "Japan",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/100/106/106.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "imo",
+      "display_name": "Imo",
+      "items": [
+        {
+          "attribute_name": "imo_number",
+          "display_name": "number",
+          "value_text": "9797010",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1000/1000.1/F401/F401.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "total_number_of",
+      "display_name": "Total Number Of",
+      "items": [
+        {
+          "attribute_name": "total_number_of_sister_ships_already_completed_excluding_ship_presented",
+          "display_name": "sister ships already completed (excluding ship presented)",
+          "value_text": "1",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1020/1021/1021s/1021.2/1021.2i/1021.23/H102/H102.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "total_number_of_sister_ships_still_on_order",
+          "display_name": "sister ships still on order",
+          "value_text": "nil",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    },
+    {
+      "group_name": "technical_particulars_length",
+      "display_name": "Technical Particulars Length",
+      "items": [
+        {
+          "attribute_name": "technical_particulars_length_oa",
+          "display_name": "oa",
+          "value_text": "192m",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/150",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "technical_particulars_breadth",
+      "display_name": "Technical Particulars Breadth",
+      "items": [
+        {
+          "attribute_name": "technical_particulars_breadth_moulded",
+          "display_name": "moulded",
+          "value_text": "27m",
+          "DNV_source": "/dnv-v2/vis-3-10a/100a/150/151",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "depth",
+      "display_name": "Depth",
+      "items": [
+        {
+          "attribute_name": "depth_moulded_to_main_deck",
+          "display_name": "Moulded To main deck",
+          "value_text": "15m",
+          "DNV_source": "/dnv-v2/vis-3-10a/1200a/1290/1291/C1051/C1051.7/CS1/C101/C101.3/C101.3i/C101.31/C101.311/C467/C467.5",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "draught",
+      "display_name": "Draught",
+      "items": [
+        {
+          "attribute_name": "draught_scantling",
+          "display_name": "Scantling",
+          "value_text": "6.80m",
+          "DNV_source": "/dnv-v2/vis-3-10a/1200a/1290/1291/C1051/C1051.7/CS1/C101/C101.6/C101.61",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "principal_dimension",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "gross",
+      "display_name": "Gross",
+      "items": [
+        {
+          "attribute_name": "gross",
+          "display_name": "Gross",
+          "value_text": "13,659 (Japanese)",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/620/623/623.4/M211/M211.1/M211.13/M211.131",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "tonnage",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "deadweight",
+      "display_name": "Deadweight",
+      "items": [
+        {
+          "attribute_name": "deadweight_scantling",
+          "display_name": "Scantling",
+          "value_text": "5,780dwt",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/240/242/C993",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "deadweight_heel_control_equipment",
+          "display_name": "Heel control equipment",
+          "value_text": "Auto heeling system",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/240/242/C993",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "deadweight_roll_stabilisation_equipment",
+          "display_name": "Roll-stabilisation equipment",
+          "value_text": "Fin stabiliser",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/240/242/C993",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "tonnage",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.principal_dimensions"
+    },
+    {
+      "group_name": "speed",
+      "display_name": "Speed",
+      "items": [
+        {
+          "attribute_name": "speed_service",
+          "display_name": ", service",
+          "value_text": "23.0knots",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/070",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "operation_value",
+      "source_page": 1,
+      "taxonomy_node_id": "operation_data.fuel_energy"
+    },
+    {
+      "group_name": "main_engines",
+      "display_name": "Main Engines",
+      "items": [
+        {
+          "attribute_name": "main_engines_design",
+          "display_name": "Design",
+          "value_text": "SEMT-Pielstick",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_model",
+          "display_name": "Model",
+          "value_text": "12PC2.6B",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.3/861.31/G53/G53.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_manufacturer",
+          "display_name": "Manufacturer",
+          "value_text": "JFE Engineering Corporation",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_number",
+          "display_name": "Number",
+          "value_text": "2",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_type_of_fuel",
+          "display_name": "Type of fuel",
+          "value_text": "HFO or MDO",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/620/620.1/M201",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "main_engines_output_of_each_engine",
+          "display_name": "Output of each engine",
+          "value_text": "8,800kW",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.propulsion_steering"
+    },
+    {
+      "group_name": "propellers",
+      "display_name": "Propellers",
+      "items": [
+        {
+          "attribute_name": "propellers_material",
+          "display_name": "Material",
+          "value_text": "Ni-Al-Bronze",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_designer_manufacturer",
+          "display_name": "Designer/Manufacturer",
+          "value_text": "Japan Marine United Corporation / Nakashima Propeller Co., Ltd",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "design_data.general_vessel_information",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_number",
+          "display_name": "Number",
+          "value_text": "1 x contra-rotating propeller",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_fixed_controllable_pitch",
+          "display_name": "Fixed/controllable pitch",
+          "value_text": "Fixed Propulsive motors",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_number",
+          "display_name": "Number",
+          "value_text": "2",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_make_type",
+          "display_name": "Make/type",
+          "value_text": "Nishishiba Electric Co., Ltd Main-engine driven alternators (for side thrusters)",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "propellers_make_type",
+          "display_name": "Make/type",
+          "value_text": "Nishishiba Electric Co., Ltd",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "diesel_driven_alternators",
+      "display_name": "Diesel Driven Alternators",
+      "items": [
+        {
+          "attribute_name": "diesel_driven_alternators_number",
+          "display_name": "Diesel-Driven Alternators Number",
+          "value_text": "4",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/200a/220/221/221.4/CS2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_engine_make_type",
+          "display_name": "Diesel-Driven Alternators Engine make/type",
+          "value_text": "Daihatsu Diesel MFG.Co.,Ltd",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/1200a/1290/1291/C1051/C1051.7/CS1/C108",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_type_of_fuel",
+          "display_name": "Diesel-Driven Alternators Type of fuel",
+          "value_text": "HFO or MDO",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/600a/620/620.1/M201",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "diesel_driven_alternators_alternator_make_type",
+          "display_name": "Diesel-Driven Alternators Alternator make/type",
+          "value_text": "Nishishiba Electric Co., Ltd",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1
+    },
+    {
+      "group_name": "mooring_equipment",
+      "display_name": "Mooring Equipment",
+      "items": [
+        {
+          "attribute_name": "mooring_equipment_number",
+          "display_name": "Number",
+          "value_text": "2 x Windlass & mooring winch, 4 x mooring winch",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "mooring_equipment_type",
+          "display_name": "Type",
+          "value_text": "Electro-hydraulic driven Vehicles",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "mooring_equipment_make",
+      "display_name": "Mooring Equipment Make",
+      "items": [
+        {
+          "attribute_name": "mooring_equipment_make",
+          "display_name": "Mooring Equipment Make",
+          "value_text": "Manabe Zoki Co., Ltd",
+          "DNV_source": "/dnv-v2/vis-3-10a/300a/320/322/322.8",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "mooring_equipment_total",
+      "display_name": "Mooring Equipment Total",
+      "items": [
+        {
+          "attribute_name": "mooring_equipment_total_cars",
+          "display_name": "cars",
+          "value_text": "Trucks 121, Private cars 134 Doors/ramps/lifts/moveable car decks Private",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.2",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "mooring_equipment_number",
+      "display_name": "Mooring Equipment Number",
+      "items": [
+        {
+          "attribute_name": "mooring_equipment_number_of_each",
+          "display_name": "of each",
+          "value_text": "1 x fore side ramp, 1 x stern side ramp, 2 x removable ramp, 3 x fixed ramp",
+          "DNV_source": "/dnv-v2/vis-3-10a/300a/320/322/322.8",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.machinery_systems"
+    },
+    {
+      "group_name": "complement",
+      "display_name": "Complement",
+      "items": [
+        {
+          "attribute_name": "complement_officers",
+          "display_name": "Officers",
+          "value_text": "9",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_crew",
+          "display_name": "Crew",
+          "value_text": "18",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_supernumaries_spare",
+          "display_name": "Supernumaries/Spare",
+          "value_text": "14 Passengers",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_total",
+          "display_name": "Total",
+          "value_text": "709",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_number_of_cabins",
+          "display_name": "Number of cabins",
+          "value_text": "184 Bow thrusters",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make",
+          "display_name": "Make",
+          "value_text": "Kawasaki Heavy Industries, Ltd",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_number",
+          "display_name": "Number",
+          "value_text": "2 Stern thrusters",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_number",
+          "display_name": "Number",
+          "value_text": "2 Fire detection system",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make",
+          "display_name": "Make",
+          "value_text": "Consilium Nittan Marine Ltd Fire extinguishing systems",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_engine_room",
+          "display_name": "Engine room",
+          "value_text": "not specified in document",
+          "data_kind": "component_or_system",
+          "taxonomy_node_id": "design_data.propulsion_steering",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make_type",
+          "display_name": "Make/Type",
+          "value_text": "Kashiwa Co., Ltd. / High expansion foam",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_vehicle_spaces_trucks",
+          "display_name": "Vehicle spaces (trucks)",
+          "value_text": "not specified in document",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_vehicle_spaces_private_cars",
+          "display_name": "Vehicle spaces (private cars)",
+          "value_text": "not specified in document",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_make_type",
+          "display_name": "Make/Type",
+          "value_text": "Nohmi Bosai Ltd. / Fixed water-based",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_cabins",
+          "display_name": "Cabins",
+          "value_text": "not specified in document",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_type",
+          "display_name": "Type",
+          "value_text": "Sea water and portable",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_public_spaces",
+          "display_name": "Public spaces",
+          "value_text": "not specified in document",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "/dnv-v2/vis-3-10a/1000a/1010/1017/1017.1/1017.11/S261/S261.1",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "complement_type",
+          "display_name": "Type",
+          "value_text": "Sprinkler sea water and portable",
+          "data_kind": "document_fact",
+          "taxonomy_node_id": "unclassified.pending_review",
+          "DNV_source": "DNV not found yet",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "source_page": 1
+    },
+    {
+      "group_name": "radars",
+      "display_name": "Radars",
+      "items": [
+        {
+          "attribute_name": "radars_number",
+          "display_name": "Number",
+          "value_text": "2",
+          "taxonomy_node_id": "design_data.navigation_communication",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/710",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "radars_make",
+          "display_name": "Make",
+          "value_text": "Furuno Electric Co., Ltd",
+          "taxonomy_node_id": "design_data.electrical_power_system",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
+          "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "radars_sunflower_satsuma",
+          "display_name": "SUNFLOWER SATSUMA",
+          "value_text": "Ro-pax",
+          "taxonomy_node_id": "design_data.navigation_communication",
+          "DNV_source": "/dnv-v2/vis-3-10a/700a",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "component_or_system",
+      "source_page": 1
+    },
+    {
+      "group_name": "delivery",
+      "display_name": "Delivery",
+      "items": [
+        {
+          "attribute_name": "delivery_date",
+          "display_name": "date",
+          "value_text": "27 April 2018",
+          "DNV_source": "/dnv-v2/vis-3-10a/000a/000",
+          "proposed_extension_if_missing": "not specified in document"
+        }
+      ],
+      "data_kind": "document_fact",
+      "source_page": 1,
+      "taxonomy_node_id": "design_data.general_vessel_information"
+    }
+  ],
+  "tanks": [],
+  "components": [],
+  "detected_vessels": [],
+  "warnings": [
+    "PDF text extraction succeeded.",
+    "AI context selected page(s): 1, 2.",
+    "Automatic route selected document_type=principal_dimensions, data_family=design_data.",
+    "DNV source index refreshed from Excel with 7277 entries.",
+    "The local AI did not return usable JSON, so the app created a structured editable draft from parser data."
+  ],
+  "missing_information": [],
+  "taxonomy_extension_requests": [],
+  "dnv_gmod_reference": {
+    "standard": {
+      "name": "DNV_GMOD_INTERNAL_DEFAULT",
+      "version": "0.1",
+      "description": "Default maritime taxonomy used by the application for vessel data extraction, validation and classification.",
+      "rule": "AI must classify extracted data using this taxonomy first. Missing categories must be proposed as extensions, not invented as final nodes."
+    },
+    "unknown_node": "unclassified.pending_review"
+  },
+  "ai_status": "AI_JSON_UNAVAILABLE"
+}
