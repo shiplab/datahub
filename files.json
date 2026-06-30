@@ -6,18 +6,7 @@
       "name": "Gunnerus",
       "type": "folder",
       "children": [
-        {
-          "name": "report.pdf",
-          "type": "file",
-          "description": "Mission report 2026",
-          "path": "Projects/Gunnerus/report.pdf"
-        },
-        {
-          "name": "drawings.pdf",
-          "type": "file",
-          "description": "General arrangement drawings",
-          "path": "Projects/Gunnerus/drawings.pdf"
-        },
+       
         {
           "name": "1-s2.0-S0029801824035273-main",
           "type": "file",
@@ -25,49 +14,42 @@
           "path": "Projects/Gunnerus/1-s2.0-S0029801824035273-main.pdf"
         },
         {
-          "name": "toobigdata",
+          "name": "crane_accelerometres_data1.csv",
           "type": "file",
-          "description": "list of the files that are too big for github",
-          "path": "Projects/Gunnerus/toobigdata"
+          "description": "",
+          "path": "Projects/Gunnerus/crane_accelerometres_data1.csv"
         },
         {
-          "name": "hull",
-          "type": "folder",
-          "children": [
-            {
-              "name": "vessel data from kongsberg seapath",
-              "type": "folder",
-              "description": "file containing the hull mouvement data ",
-              "path": "Projects/Gunnerus/hull/vessel data from kongsberg seapath"
-            }
-          ],
-          "description": "files containing the hull mouvement data ",
-          "path": "Projects/Gunnerus/hull"
+          "name": "crane_accelerometres_data2.csv",
+          "type": "file",
+          "description": "",
+          "path": "Projects/Gunnerus/crane_accelerometres_data2.csv"
         },
         {
-          "name": "crane tip",
-          "type": "folder",
-          "children": [
-            {
-              "name": "Crane accelerometers data",
-              "type": "folder",
-              "description": "file containing the crane tip mouvement data ",
-              "path": "Projects/Gunnerus/crane tip/Crane accelerometers data"
-            }
-          ],
-          "description": "files containing the crane tip mouvement data ",
-          "path": "Projects/Gunnerus/crane tip"
+          "name": "time_series_motion_prediction_data1.csv",
+          "type": "file",
+          "description": "",
+          "path": "Projects/Gunnerus/time_series_motion_prediction_data1.csv"
         },
         {
-          "name": "crane arm and engine",
-          "type": "folder",
-          "children": [
-            {
-              "name": "vessel data from nuc PC ",
-              "type": "folder",
-              "description": "file containing the crane arm mouvement data and engines data ",
-              "path": "Projects/Gunnerus/crane arm and engine/vessel data from nuc PC"
-            }
+          "name": "time_series_motion_prediction_data2.csv",
+          "type": "file",
+          "description": "",
+          "path": "Projects/Gunnerus/time_series_motion_prediction_data2.csv"
+        },
+        {
+          "name": "vessel_data_from_NUC_Gunnerus_W44.csv",
+          "type": "file",
+          "description": "",
+          "path": "Projects/Gunnerus/vessel_data_from_NUC_Gunnerus_W44.csv"
+        },
+        {
+          "name": "vessel_data_from_nuc_pc_w44_daily_data.csv",
+          "type": "file",
+          "description": "",
+          "path": "Projects/Gunnerus/vessel_data_from_nuc_pc_w44_daily_data.csv"
+        }
+        
           ],
           "description": "files containing the crane arm mouvement data and engines data ",
           "path": "Projects/Gunnerus/crane arm and engine"
