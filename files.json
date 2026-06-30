@@ -49,12 +49,10 @@
           "description": "",
           "path": "Projects/Gunnerus/vessel_data_from_nuc_pc_w44_daily_data.csv"
         }
-        
-          ],
+        ],
           "description": "files containing the crane arm mouvement data and engines data ",
           "path": "Projects/Gunnerus/crane arm and engine"
-        }
-      ]
+        
     },
 
     {
