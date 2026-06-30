@@ -78,18 +78,21 @@
       "name": "RINA",
       "type": "folder",
       "children": [
+
+        {
+          "name": "ALMI ATLAS.json",
+          "type": "file",
+          "description": "Information about the ALMI ATLAS vessel, data extracted from the RINA.",
+          "path": "Projects/RINA/ALMI ATLAS.json"
+        },
+
         {
           "name": "AMPHION.json",
           "type": "file",
           "description": "Information about the AMPHION vessel, data extracted from the RINA.",
           "path": "Projects/RINA/AMPHION.json"
-        },
-        {
-          "name": "ATLAS.json",
-          "type": "file",
-          "description": "Information about the ATLAS vessel, data extracted from the RINA.",
-          "path": "Projects/RINA/ATLAS.json"
         }
+        
         
         
       ]
