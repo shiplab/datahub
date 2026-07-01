@@ -16,6 +16,7 @@ async function loadProjectBlocks() {
   const response = await fetch("files.json");
   const filesData = await response.json();
   addRinaVesselLinks(getRinaVessels(filesData));
+  addGunnerusLinks(getGunnerusSections(filesData));
 }
 
 function getRinaVessels(filesData) {
@@ -41,6 +42,32 @@ function addRinaVesselLinks(vessels) {
     const link = document.createElement("a");
     link.href = "Pages/Rina_pages.html?vessel=" + encodeURIComponent(vesselName);
     link.textContent = vesselName;
+    list.appendChild(link);
+  });
+}
+
+function getGunnerusSections(filesData) {
+  const gunnerusProject = (filesData.children || []).find(function (project) {
+    return project.name === "Gunnerus";
+  });
+  const wantedSections = ["crane", "engine", "ship", "wind"];
+
+  return (gunnerusProject && gunnerusProject.children || []).filter(function (file) {
+    return file.type === "file" && wantedSections.includes(file.name.toLowerCase().replace(".json", ""));
+  }).map(function (file) {
+    return file.name.slice(0, -5).toLowerCase();
+  }).sort(function (first, second) {
+    return wantedSections.indexOf(first) - wantedSections.indexOf(second);
+  });
+}
+
+function addGunnerusLinks(sections) {
+  const list = document.getElementById("gunnerus-vessel-links");
+
+  sections.forEach(function (sectionName) {
+    const link = document.createElement("a");
+    link.href = "Pages/Gunnerus_pages.html?section=" + encodeURIComponent(sectionName);
+    link.textContent = sectionName.charAt(0).toUpperCase() + sectionName.slice(1);
     list.appendChild(link);
   });
 }

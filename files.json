@@ -8,7 +8,30 @@
       "description": "Files containing Gunnerus vessel, crane, engine and motion data.",
       "path": "Projects/Gunnerus",
       "children": [
-       
+        {
+          "name": "crane.json",
+          "type": "file",
+          "description": "Crane measurements, timestamps and DNV mappings.",
+          "path": "Projects/Gunnerus/crane.json"
+        },
+        {
+          "name": "engine.json",
+          "type": "file",
+          "description": "Engine measurements, timestamps and DNV mappings.",
+          "path": "Projects/Gunnerus/engine.json"
+        },
+        {
+          "name": "ship.json",
+          "type": "file",
+          "description": "Ship measurements, timestamps and DNV mappings.",
+          "path": "Projects/Gunnerus/ship.json"
+        },
+        {
+          "name": "wind.json",
+          "type": "file",
+          "description": "Wind speed, wind direction, timestamps and DNV mappings.",
+          "path": "Projects/Gunnerus/wind.json"
+        },
         {
           "name": "1-s2.0-S0029801824035273-main",
           "type": "file",

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gunnerus Data</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="rina-page gunnerus-page">
+  <header class="rina-topbar">
+    <a class="back-link" href="../index.html">Back to dashboard</a>
+    <h1>Gunnerus Research Vessel Data</h1>
+    <div class="legend">
+      <span class="legend-mapped">Mapped to DNV</span>
+    </div>
+  </header>
+
+  <main class="rina-layout">
+    <section class="vessel-panel gunnerus-data-panel">
+      <div class="panel-heading">
+        <h2>Measurements and graphs</h2>
+        <p>Select a data group. The timestamp is used on the horizontal axis.</p>
+      </div>
+
+      <div id="gunnerus-accordions" class="vessel-accordions gunnerus-accordions"></div>
+
+      <div class="download-bar">
+        <a id="download-gunnerus-json" class="download-button disabled" aria-disabled="true">Get raw JSON</a>
+      </div>
+    </section>
+
+    <section class="dnv-panel">
+      <div class="panel-heading">
+        <div class="dnv-heading-row">
+          <div>
+            <h2>Generic Product Model — VIS</h2>
+            <p>Complete DNV hierarchy with Gunnerus measurements.</p>
+          </div>
+          <span class="version-badge">3-10a</span>
+        </div>
+      </div>
+
+      <div class="tree-search-box">
+        <input id="tree-search" type="search" placeholder="Search a DNV code or name" autocomplete="off">
+        <div id="tree-search-results" class="tree-search-results"></div>
+      </div>
+
+      <div id="tree-status" class="tree-status">Loading complete DNV hierarchy...</div>
+      <div id="dnv-tree" class="dnv-tree"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="../Scripts/gunnerus-page.js"></script>
+</body>
+</html>
