@@ -12,67 +12,67 @@
           "name": "crane.json",
           "type": "file",
           "description": "Crane measurements, timestamps and DNV mappings.",
-          "path": "Projects/Gunnerus/crane.json"
+          "path": "Projects/Gunnerus/raw_DATA/crane.json"
         },
         {
           "name": "engine.json",
           "type": "file",
           "description": "Engine measurements, timestamps and DNV mappings.",
-          "path": "Projects/Gunnerus/engine.json"
+          "path": "Projects/Gunnerus/raw_DATA/engine.json"
         },
         {
           "name": "ship.json",
           "type": "file",
           "description": "Ship measurements, timestamps and DNV mappings.",
-          "path": "Projects/Gunnerus/ship.json"
+          "path": "Projects/Gunnerus/raw_DATA/ship.json"
         },
         {
           "name": "wind.json",
           "type": "file",
           "description": "Wind speed, wind direction, timestamps and DNV mappings.",
-          "path": "Projects/Gunnerus/wind.json"
+          "path": "Projects/Gunnerus/raw_DATA/wind.json"
         },
         {
           "name": "1-s2.0-S0029801824035273-main",
           "type": "file",
           "description": "Report of the shielding effect study on Gunnerus",
-          "path": "Projects/Gunnerus/1-s2.0-S0029801824035273-main.pdf"
+          "path": "Projects/Gunnerus/raw_DATA/1-s2.0-S0029801824035273-main.pdf"
         },
         {
           "name": "crane_accelerometres_data1.csv",
           "type": "file",
           "description": "First crane accelerometer and motion dataset.",
-          "path": "Projects/Gunnerus/crane_accelerometres_data1.csv"
+          "path": "Projects/Gunnerus/raw_DATA/crane_accelerometres_data1.csv"
         },
         {
           "name": "crane_accelerometres_data2.csv",
           "type": "file",
           "description": "Second crane accelerometer and motion dataset.",
-          "path": "Projects/Gunnerus/crane_accelerometres_data2.csv"
+          "path": "Projects/Gunnerus/raw_DATA/crane_accelerometres_data2.csv"
         },
         {
           "name": "time_series_motion_prediction_data1.csv",
           "type": "file",
           "description": "First vessel motion prediction time-series dataset.",
-          "path": "Projects/Gunnerus/time_series_motion_prediction_data1.csv"
+          "path": "Projects/Gunnerus/raw_DATA/time_series_motion_prediction_data1.csv"
         },
         {
           "name": "time_series_motion_prediction_data2.csv",
           "type": "file",
           "description": "Second vessel motion prediction time-series dataset.",
-          "path": "Projects/Gunnerus/time_series_motion_prediction_data2.csv"
+          "path": "Projects/Gunnerus/raw_DATA/time_series_motion_prediction_data2.csv"
         },
         {
           "name": "vessel_data_from_NUC_Gunnerus_W44.csv",
           "type": "file",
           "description": "Gunnerus crane, engine, navigation and wave data from the NUC computer.",
-          "path": "Projects/Gunnerus/vessel_data_from_NUC_Gunnerus_W44.csv"
+          "path": "Projects/Gunnerus/raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
         },
         {
           "name": "vessel_data_from_nuc_pc_w44_daily_data.csv",
           "type": "file",
           "description": "Daily Gunnerus navigation and vessel motion data from the NUC computer.",
-          "path": "Projects/Gunnerus/vessel_data_from_nuc_pc_w44_daily_data.csv"
+          "path": "Projects/Gunnerus/raw_DATA/vessel_data_from_nuc_pc_w44_daily_data.csv"
         }
         ]
         
@@ -90,223 +90,223 @@
               "name": "ALMI ATLAS.json",
               "type": "file",
               "description": "Information about the ALMI ATLAS vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/ALMI ATLAS.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/ALMI ATLAS/Based_JSON/ALMI ATLAS.json"
             },
             {
               "name": "AMPHION.json",
               "type": "file",
               "description": "Information about the AMPHION vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/AMPHION.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/AMPHION/Based_JSON/AMPHION.json"
             },
             {
               "name": "BRITISH PARTNER.json",
               "type": "file",
               "description": "Information about the BRITISH PARTNER vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/BRITISH PARTNER.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/BRITISH PARTNER/Based_JSON/BRITISH PARTNER.json"
             },
             {
               "name": "BW TULIP.json",
               "type": "file",
               "description": "Information about the BW TULIP vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/BW TULIP.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/BW TULIP/Based_JSON/BW TULIP.json"
             },
             {
               "name": "CMA CGM ANTOINE DE SAINT EXUPERY.json",
               "type": "file",
               "description": "Information about the CMA CGM ANTOINE DE SAINT EXUPERY vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/CMA CGM ANTOINE DE SAINT EXUPERY.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/CMA CGM ANTOINE DE SAINT EXUPERY/Based_JSON/CMA CGM ANTOINE DE SAINT EXUPERY.json"
             },
             {
               "name": "CMA CGM PREGOLIA.json",
               "type": "file",
               "description": "Information about the CMA CGM PREGOLIA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/CMA CGM PREGOLIA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/CMA CGM PREGOLIA/Based_JSON/CMA CGM PREGOLIA.json"
             },
             {
               "name": "DANIEL K INOUYE.json",
               "type": "file",
               "description": "Information about the DANIEL K INOUYE vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/DANIEL K INOUYE.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/DANIEL K INOUYE/Based_JSON/DANIEL K INOUYE.json"
             },
             {
               "name": "DHT BRONCO.json",
               "type": "file",
               "description": "Information about the DHT BRONCO vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/DHT BRONCO.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/DHT BRONCO/Based_JSON/DHT BRONCO.json"
             },
             {
               "name": "EAGLE BARCELONA.json",
               "type": "file",
               "description": "Information about the EAGLE BARCELONA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/EAGLE BARCELONA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/EAGLE BARCELONA/Based_JSON/EAGLE BARCELONA.json"
             },
             {
               "name": "EL COQUÍ.json",
               "type": "file",
               "description": "Information about the EL COQUÍ vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/EL COQUÍ.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/EL COQUÍ/Based_JSON/EL COQUÍ.json"
             },
             {
               "name": "FLAVIN.json",
               "type": "file",
               "description": "Information about the FLAVIN vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/FLAVIN.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/FLAVIN/Based_JSON/FLAVIN.json"
             },
             {
               "name": "FURE VINGA.json",
               "type": "file",
               "description": "Information about the FURE VINGA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/FURE VINGA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/FURE VINGA/Based_JSON/FURE VINGA.json"
             },
             {
               "name": "GAGARIN PROSPECT.json",
               "type": "file",
               "description": "Information about the GAGARIN PROSPECT vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/GAGARIN PROSPECT.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/GAGARIN PROSPECT/Based_JSON/GAGARIN PROSPECT.json"
             },
             {
               "name": "GOLAR NANOOK.json",
               "type": "file",
               "description": "Information about the GOLAR NANOOK vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/GOLAR NANOOK.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/GOLAR NANOOK/Based_JSON/GOLAR NANOOK.json"
             },
             {
               "name": "HMM PROMISE.json",
               "type": "file",
               "description": "Information about the HMM PROMISE vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/HMM PROMISE.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/HMM PROMISE/Based_JSON/HMM PROMISE.json"
             },
             {
               "name": "HOEGH GANNET.json",
               "type": "file",
               "description": "Information about the HOEGH GANNET vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/HOEGH GANNET.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/HOEGH GANNET/Based_JSON/HOEGH GANNET.json"
             },
             {
               "name": "IBERIAN SEA.json",
               "type": "file",
               "description": "Information about the IBERIAN SEA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/IBERIAN SEA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/IBERIAN SEA/Based_JSON/IBERIAN SEA.json"
             },
             {
               "name": "INDUSTRIAL COURAGE.json",
               "type": "file",
               "description": "Information about the INDUSTRIAL COURAGE vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/INDUSTRIAL COURAGE.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/INDUSTRIAL COURAGE/Based_JSON/INDUSTRIAL COURAGE.json"
             },
             {
               "name": "INDUSTRIAL FAME.json",
               "type": "file",
               "description": "Information about the INDUSTRIAL FAME vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/INDUSTRIAL FAME.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/INDUSTRIAL FAME/Based_JSON/INDUSTRIAL FAME.json"
             },
             {
               "name": "KAIROS.json",
               "type": "file",
               "description": "Information about the KAIROS vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/KAIROS.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/KAIROS/Based_JSON/KAIROS.json"
             },
             {
               "name": "MARSHAL VASILEVSKIY.json",
               "type": "file",
               "description": "Information about the MARSHAL VASILEVSKIY vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/MARSHAL VASILEVSKIY.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/MARSHAL VASILEVSKIY/Based_JSON/MARSHAL VASILEVSKIY.json"
             },
             {
               "name": "MARVEL EAGLE.json",
               "type": "file",
               "description": "Information about the MARVEL EAGLE vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/MARVEL EAGLE.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/MARVEL EAGLE/Based_JSON/MARVEL EAGLE.json"
             },
             {
               "name": "MARVEL FALCON.json",
               "type": "file",
               "description": "Information about the MARVEL FALCON vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/MARVEL FALCON.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/MARVEL FALCON/Based_JSON/MARVEL FALCON.json"
             },
             {
               "name": "MORVIKEN.json",
               "type": "file",
               "description": "Information about the MORVIKEN vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/MORVIKEN.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/MORVIKEN/Based_JSON/MORVIKEN.json"
             },
             {
               "name": "NAUTICAL DEBORAH.json",
               "type": "file",
               "description": "Information about the NAUTICAL DEBORAH vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/NAUTICAL DEBORAH.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/NAUTICAL DEBORAH/Based_JSON/NAUTICAL DEBORAH.json"
             },
             {
               "name": "NEW GOLDEN BRIDGE VII.json",
               "type": "file",
               "description": "Information about the NEW GOLDEN BRIDGE VII vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/NEW GOLDEN BRIDGE VII.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/NEW GOLDEN BRIDGE VII/Based_JSON/NEW GOLDEN BRIDGE VII.json"
             },
             {
               "name": "NEW SHIDAO PEARL.json",
               "type": "file",
               "description": "Information about the NEW SHIDAO PEARL vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/NEW SHIDAO PEARL.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/NEW SHIDAO PEARL/Based_JSON/NEW SHIDAO PEARL.json"
             },
             {
               "name": "POLA MAKARIA.json",
               "type": "file",
               "description": "Information about the POLA MAKARIA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/POLA MAKARIA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/POLA MAKARIA/Based_JSON/POLA MAKARIA.json"
             },
             {
               "name": "RRS SIR DAVID ATTENBOROUGH.json",
               "type": "file",
               "description": "Information about the RRS SIR DAVID ATTENBOROUGH vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/RRS SIR DAVID ATTENBOROUGH.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/RRS SIR DAVID ATTENBOROUGH/Based_JSON/RRS SIR DAVID ATTENBOROUGH.json"
             },
             {
               "name": "SABRE TRADER.json",
               "type": "file",
               "description": "Information about the SABRE TRADER vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/SABRE TRADER.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/SABRE TRADER/Based_JSON/SABRE TRADER.json"
             },
             {
               "name": "SAINT JOHN PAUL II.json",
               "type": "file",
               "description": "Information about the SAINT JOHN PAUL II vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/SAINT JOHN PAUL II.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/SAINT JOHN PAUL II/Based_JSON/SAINT JOHN PAUL II.json"
             },
             {
               "name": "SAO DIANA.json",
               "type": "file",
               "description": "Information about the SAO DIANA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/SAO DIANA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/SAO DIANA/Based_JSON/SAO DIANA.json"
             },
             {
               "name": "SUNFLOWER SATSUMA.json",
               "type": "file",
               "description": "Information about the SUNFLOWER SATSUMA vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/SUNFLOWER SATSUMA.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/SUNFLOWER SATSUMA/Based_JSON/SUNFLOWER SATSUMA.json"
             },
             {
               "name": "TITUS.json",
               "type": "file",
               "description": "Information about the TITUS vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/TITUS.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/TITUS/Based_JSON/TITUS.json"
             },
             {
               "name": "TROPIC HOPE.json",
               "type": "file",
               "description": "Information about the TROPIC HOPE vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/TROPIC HOPE.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/TROPIC HOPE/Based_JSON/TROPIC HOPE.json"
             },
             {
               "name": "W B YEATS.json",
               "type": "file",
               "description": "Information about the W B YEATS vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/W B YEATS.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/W B YEATS/Based_JSON/W B YEATS.json"
             },
             {
               "name": "YUAN HE HAI.json",
               "type": "file",
               "description": "Information about the YUAN HE HAI vessel, data extracted from the RINA.",
-              "path": "Projects/RINA Sig. Ships/Vol.2018/YUAN HE HAI.json"
+              "path": "Projects/RINA Sig. Ships/Vol.2018/YUAN HE HAI/Based_JSON/YUAN HE HAI.json"
             }
           ]
         }

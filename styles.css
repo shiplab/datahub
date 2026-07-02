@@ -372,8 +372,15 @@ hr {
 }
 
 .information-card-title {
-  margin-bottom: 5px;
   font-weight: bold;
+}
+
+.information-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 5px;
 }
 
 .information-card-value {
@@ -574,6 +581,53 @@ hr {
   color: #185f2a;
   background: white;
   font-size: 0.73rem;
+}
+
+.tree-source-links {
+  display: inline-block;
+  margin-left: 7px;
+  white-space: normal;
+}
+
+.tree-source-download,
+.tree-source-menu > summary {
+  display: inline-block;
+  padding: 4px 7px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  color: var(--blue);
+  background: white;
+  font-size: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.tree-source-download:hover,
+.tree-source-menu > summary:hover {
+  color: white;
+  background: var(--blue);
+}
+
+.tree-source-menu > summary {
+  list-style: none;
+}
+
+.tree-source-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree-source-list {
+  display: grid;
+  gap: 5px;
+  margin-top: 5px;
+  padding: 7px;
+  border: 1px solid #c9d8de;
+  border-radius: 4px;
+  background: #f7fafb;
+}
+
+.tree-source-list .tree-source-download {
+  overflow-wrap: anywhere;
 }
 
 .tree-children {

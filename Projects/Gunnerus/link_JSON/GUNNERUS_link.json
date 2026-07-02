@@ -1,0 +1,117 @@
+{
+  "version": 1,
+  "based_json": "../Based_JSON/GUNNERUS.json",
+  "raw_data_folder": "../raw_DATA/",
+  "links": [
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.3",
+      "sections": ["crane"],
+      "files": ["crane.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.41",
+      "sections": ["crane"],
+      "files": ["crane.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.42",
+      "sections": ["crane"],
+      "files": ["crane.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.43",
+      "sections": ["crane"],
+      "files": ["crane.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "sections": ["crane"],
+      "files": ["crane.json", "crane_accelerometres_data1.csv", "crane_accelerometres_data2.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.61/S203",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.63/S206",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.66",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.71/I101",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.73/I101",
+      "sections": ["engine"],
+      "files": ["engine.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.3",
+      "sections": ["ship"],
+      "files": ["ship.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "sections": ["ship"],
+      "files": ["ship.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/450/451/451.1/451.11/I101",
+      "sections": ["ship"],
+      "files": ["ship.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "sections": ["ship"],
+      "files": ["ship.json", "vessel_data_from_NUC_Gunnerus_W44.csv", "time_series_motion_prediction_data1.csv", "time_series_motion_prediction_data2.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "sections": ["ship"],
+      "files": ["ship.json", "raw_GPS_data_GUNNERUS.json", "vessel_data_from_NUC_Gunnerus_W44.csv", "time_series_motion_prediction_data1.csv", "time_series_motion_prediction_data2.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/700a/710/713/713.1/NS1",
+      "sections": ["ship"],
+      "files": ["ship.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "sections": ["ship"],
+      "files": ["ship.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.1",
+      "sections": ["wind"],
+      "files": ["wind.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "sections": ["wind"],
+      "files": ["wind.json", "vessel_data_from_NUC_Gunnerus_W44.csv", "time_series_motion_prediction_data1.csv", "time_series_motion_prediction_data2.csv"]
+    },
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.4",
+      "sections": ["wind"],
+      "files": ["wind.json", "vessel_data_from_NUC_Gunnerus_W44.csv"]
+    }
+  ]
+}

@@ -3,6 +3,7 @@ const DNV_DATA_FILE = "../Data/dnv-vis-3-10a.json";
 
 let selectedVessel = "";
 let selectedVesselData = null;
+let selectedVesselLinkData = null;
 let rinaVessels = [];
 let dnvItems = [];
 let dnvItemsByCode = new Map();
@@ -11,6 +12,9 @@ let vesselValuesByCode = new Map();
 let vesselCache = new Map();
 let renderedRowsByCode = new Map();
 let pathCache = new Map();
+let visibleDnvCodes = new Set();
+let rawSourceLinksByCode = new Map();
+let vesselLinkCache = new Map();
 
 const accordionsContainer = document.getElementById("vessel-accordions");
 const downloadButton = document.getElementById("download-json");
@@ -93,7 +97,7 @@ async function selectVessel(vesselName, content) {
     let data = vesselCache.get(vesselName);
 
     if (!data) {
-      const fileUrl = VESSEL_FOLDER + encodeURIComponent(vesselName) + ".json";
+      const fileUrl = getVesselFileUrl(vesselName);
       const response = await fetch(fileUrl);
 
       if (!response.ok) {
@@ -104,14 +108,21 @@ async function selectVessel(vesselName, content) {
       vesselCache.set(vesselName, data);
     }
 
+    const linkData = await loadVesselLinkData(vesselName);
+
     if (selectedVessel !== vesselName) {
       return;
     }
 
     selectedVesselData = data;
+    selectedVesselLinkData = linkData;
     vesselValuesByCode = buildVesselValuesMap(data);
+    rawSourceLinksByCode = buildRawSourceLinksMap(linkData);
+    visibleDnvCodes = buildVisibleDnvCodes(data, linkData);
+    pathCache = new Map();
     renderVesselInformation(content, data);
-    updateRenderedTreeValues();
+    renderTreeRoots();
+    expandAllVisibleTreeNodes(treeContainer);
     updateTreeStatus(data);
   } catch (error) {
     content.innerHTML = "<p class='error-message'>This vessel JSON could not be loaded.</p>";
@@ -121,20 +132,97 @@ async function selectVessel(vesselName, content) {
 function clearSelectedVessel() {
   selectedVessel = "";
   selectedVesselData = null;
+  selectedVesselLinkData = null;
   vesselValuesByCode = new Map();
+  rawSourceLinksByCode = new Map();
+  visibleDnvCodes = new Set();
+  pathCache = new Map();
   disableDownload();
-  updateRenderedTreeValues();
+  renderTreeRoots();
+  treeSearch.value = "";
+  treeSearchResults.innerHTML = "";
 
   if (dnvItems.length) {
-    treeStatus.textContent = dnvItems.length + " DNV nodes loaded. Select a vessel to display its mapped values.";
+    treeStatus.textContent = "Select a vessel to display its DNV paths.";
   }
 }
 
 function enableDownload(vesselName) {
-  downloadButton.href = VESSEL_FOLDER + encodeURIComponent(vesselName) + ".json";
+  downloadButton.href = getVesselFileUrl(vesselName);
   downloadButton.download = vesselName + ".json";
   downloadButton.classList.remove("disabled");
   downloadButton.setAttribute("aria-disabled", "false");
+}
+
+function getVesselFileUrl(vesselName) {
+  const encodedName = encodeURIComponent(vesselName);
+  return VESSEL_FOLDER + encodedName + "/Based_JSON/" + encodedName + ".json";
+}
+
+function getVesselLinkFileUrl(vesselName) {
+  const encodedFolder = encodeURIComponent(vesselName);
+  const linkFilename = vesselName.replaceAll(" ", "_") + "_link.json";
+  return VESSEL_FOLDER + encodedFolder + "/link_JSON/" + encodeURIComponent(linkFilename);
+}
+
+async function loadVesselLinkData(vesselName) {
+  if (vesselLinkCache.has(vesselName)) {
+    return vesselLinkCache.get(vesselName);
+  }
+
+  const linkFileUrl = getVesselLinkFileUrl(vesselName);
+  let linkData = { links: [], raw_data_folder: "../raw_DATA/" };
+
+  try {
+    const response = await fetch(linkFileUrl);
+
+    if (response.ok) {
+      linkData = await response.json();
+    }
+  } catch (error) {
+    linkData = { links: [], raw_data_folder: "../raw_DATA/" };
+  }
+
+  linkData.linkFileUrl = linkFileUrl;
+  vesselLinkCache.set(vesselName, linkData);
+  return linkData;
+}
+
+function buildRawSourceLinksMap(linkData) {
+  const linksByCode = new Map();
+
+  (linkData && linkData.links || []).forEach(function (link) {
+    const codes = getDnvCodes(link.dnv_path);
+    const code = codes[codes.length - 1];
+
+    if (!code) {
+      return;
+    }
+
+    const sources = linksByCode.get(code) || [];
+
+    (link.files || []).forEach(function (file) {
+      const fileName = typeof file === "string" ? file : file.name;
+      const label = typeof file === "string" ? file : file.label || file.name;
+
+      if (!fileName) {
+        return;
+      }
+
+      const baseUrl = new URL(linkData.linkFileUrl, window.location.href);
+      const fileUrl = new URL((linkData.raw_data_folder || "../raw_DATA/") + fileName, baseUrl).href;
+
+      if (!sources.some(function (source) { return source.url === fileUrl; })) {
+        sources.push({ name: fileName, label: label, url: fileUrl });
+      }
+    });
+
+    if (sources.length) {
+      linksByCode.set(code, sources);
+    }
+  });
+
+  return linksByCode;
 }
 
 function disableDownload() {
@@ -316,9 +404,29 @@ function createInformationList(records, mapped) {
     const card = document.createElement("div");
     card.className = "information-card " + (mapped ? "mapped" : "unmapped");
 
+    const heading = document.createElement("div");
+    heading.className = "information-card-heading";
+
     const title = document.createElement("div");
     title.className = "information-card-title";
     title.textContent = record.group + " — " + record.name;
+    heading.appendChild(title);
+
+    if (mapped) {
+      const codes = getDnvCodes(record.dnvSource);
+      const code = codes[codes.length - 1];
+
+      if (code) {
+        const showButton = document.createElement("button");
+        showButton.className = "show-dnv-button";
+        showButton.type = "button";
+        showButton.textContent = "Show in DNV";
+        showButton.addEventListener("click", function () {
+          showTreeNode(code);
+        });
+        heading.appendChild(showButton);
+      }
+    }
 
     const value = document.createElement("div");
     value.className = "information-card-value";
@@ -328,7 +436,7 @@ function createInformationList(records, mapped) {
     path.className = "information-card-path";
     path.textContent = record.dnvSource;
 
-    card.appendChild(title);
+    card.appendChild(heading);
     card.appendChild(value);
     card.appendChild(path);
     list.appendChild(card);
@@ -425,12 +533,16 @@ async function loadDnvTree() {
       }
     });
 
-    renderTreeRoots();
-
     if (selectedVesselData) {
+      rawSourceLinksByCode = buildRawSourceLinksMap(selectedVesselLinkData);
+      visibleDnvCodes = buildVisibleDnvCodes(selectedVesselData, selectedVesselLinkData);
+      pathCache = new Map();
+      renderTreeRoots();
+      expandAllVisibleTreeNodes(treeContainer);
       updateTreeStatus(selectedVesselData);
     } else {
-      treeStatus.textContent = dnvItems.length + " DNV nodes loaded. Select a vessel to display its mapped values.";
+      renderTreeRoots();
+      treeStatus.textContent = "Select a vessel to display its DNV paths.";
     }
   } catch (error) {
     treeStatus.textContent = "The complete DNV hierarchy could not be loaded.";
@@ -442,7 +554,7 @@ function renderTreeRoots() {
   treeContainer.innerHTML = "";
   renderedRowsByCode = new Map();
 
-  getSortedChildren("VE").forEach(function (code) {
+  getVisibleSortedChildren("VE").forEach(function (code) {
     treeContainer.appendChild(createTreeNode(code, new Set(["VE"])));
   });
 }
@@ -451,6 +563,73 @@ function getSortedChildren(code) {
   return (dnvChildrenByCode.get(code) || []).slice().sort(function (first, second) {
     return first.localeCompare(second, undefined, { numeric: true });
   });
+}
+
+function getVisibleSortedChildren(code) {
+  return getSortedChildren(code).filter(function (childCode) {
+    return visibleDnvCodes.has(childCode);
+  });
+}
+
+function buildVisibleDnvCodes(data, linkData) {
+  const codes = new Set();
+
+  extractInformation(data || {}).forEach(function (record) {
+    addVisibleDnvPath(getDnvCodes(record.dnvSource), codes);
+  });
+
+  (linkData && linkData.links || []).forEach(function (link) {
+    addVisibleDnvPath(getDnvCodes(link.dnv_path), codes);
+  });
+
+  return codes;
+}
+
+function addVisibleDnvPath(dnvPathCodes, visibleCodes) {
+  let previousCode = "VE";
+
+  dnvPathCodes.forEach(function (code) {
+    if (!dnvItemsByCode.has(code)) {
+      return;
+    }
+
+    const connectingPath = findPathBetween(previousCode, code);
+
+    if (connectingPath.length) {
+      connectingPath.forEach(function (pathCode) {
+        if (pathCode !== "VE") {
+          visibleCodes.add(pathCode);
+        }
+      });
+    } else {
+      visibleCodes.add(code);
+    }
+
+    previousCode = code;
+  });
+}
+
+function findPathBetween(startCode, targetCode) {
+  const queue = [[startCode]];
+  const visited = new Set([startCode]);
+
+  while (queue.length) {
+    const path = queue.shift();
+    const currentCode = path[path.length - 1];
+
+    if (currentCode === targetCode) {
+      return path;
+    }
+
+    getSortedChildren(currentCode).forEach(function (childCode) {
+      if (!visited.has(childCode)) {
+        visited.add(childCode);
+        queue.push(path.concat(childCode));
+      }
+    });
+  }
+
+  return [];
 }
 
 function createTreeNode(code, ancestorCodes) {
@@ -464,7 +643,7 @@ function createTreeNode(code, ancestorCodes) {
     return node;
   }
 
-  const availableChildren = getSortedChildren(code).filter(function (childCode) {
+  const availableChildren = getVisibleSortedChildren(code).filter(function (childCode) {
     return !ancestorCodes.has(childCode) && childCode !== code;
   });
 
@@ -475,7 +654,7 @@ function createTreeNode(code, ancestorCodes) {
   toggle.className = "tree-toggle";
   toggle.type = "button";
   toggle.setAttribute("aria-label", "Open " + (item.commonName || item.name || code));
-  toggle.textContent = availableChildren.length ? "▶" : "•";
+  toggle.textContent = availableChildren.length ? "+" : "•";
 
   if (!availableChildren.length) {
     toggle.classList.add("no-children");
@@ -532,7 +711,7 @@ function toggleTreeNode(node, forceOpen) {
     const nextAncestors = new Set(node.treeAncestors);
     nextAncestors.add(node.dataset.code);
 
-    getSortedChildren(node.dataset.code).forEach(function (childCode) {
+    getVisibleSortedChildren(node.dataset.code).forEach(function (childCode) {
       if (!nextAncestors.has(childCode)) {
         children.appendChild(createTreeNode(childCode, nextAncestors));
       }
@@ -542,8 +721,29 @@ function toggleTreeNode(node, forceOpen) {
   }
 
   children.hidden = !shouldOpen;
-  toggle.textContent = shouldOpen ? "▼" : "▶";
+  toggle.textContent = shouldOpen ? "−" : "+";
   toggle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+}
+
+function expandAllVisibleTreeNodes(container) {
+  Array.from(container.children).forEach(function (node) {
+    if (!node.classList.contains("tree-node")) {
+      return;
+    }
+
+    const toggle = node.querySelector(":scope > .tree-row > .tree-toggle");
+
+    if (!toggle || toggle.classList.contains("no-children")) {
+      return;
+    }
+
+    toggleTreeNode(node, true);
+    const children = node.querySelector(":scope > .tree-children");
+
+    if (children) {
+      expandAllVisibleTreeNodes(children);
+    }
+  });
 }
 
 function updateRenderedTreeValues() {
@@ -556,30 +756,76 @@ function updateRenderedTreeValues() {
 
 function updateTreeRowValue(row, code) {
   const oldValues = row.querySelector(".tree-vessel-values");
+  const oldSources = row.querySelector(".tree-source-links");
 
   if (oldValues) {
     oldValues.remove();
   }
 
+  if (oldSources) {
+    oldSources.remove();
+  }
+
   row.classList.remove("has-vessel-data");
+  row.classList.remove("has-source-data");
   const records = vesselValuesByCode.get(code) || [];
 
-  if (!records.length) {
+  if (records.length) {
+    row.classList.add("has-vessel-data");
+    const values = document.createElement("span");
+    values.className = "tree-vessel-values";
+
+    records.forEach(function (record) {
+      const value = document.createElement("span");
+      value.className = "tree-vessel-value";
+      value.textContent = record.name + ": " + simpleText(record.value);
+      values.appendChild(value);
+    });
+
+    row.appendChild(values);
+  }
+
+  appendRawSourceLinks(row, rawSourceLinksByCode.get(code) || []);
+}
+
+function appendRawSourceLinks(row, sources) {
+  if (!sources.length) {
     return;
   }
 
-  row.classList.add("has-vessel-data");
-  const values = document.createElement("span");
-  values.className = "tree-vessel-values";
+  const container = document.createElement("span");
+  container.className = "tree-source-links";
+  row.classList.add("has-source-data");
 
-  records.forEach(function (record) {
-    const value = document.createElement("span");
-    value.className = "tree-vessel-value";
-    value.textContent = record.name + ": " + simpleText(record.value);
-    values.appendChild(value);
-  });
+  if (sources.length === 1) {
+    container.appendChild(createRawSourceLink(sources[0], "Download raw source"));
+  } else {
+    const details = document.createElement("details");
+    details.className = "tree-source-menu";
+    const summary = document.createElement("summary");
+    summary.textContent = "Raw sources (" + sources.length + ")";
+    const list = document.createElement("span");
+    list.className = "tree-source-list";
 
-  row.appendChild(values);
+    sources.forEach(function (source) {
+      list.appendChild(createRawSourceLink(source, source.label));
+    });
+
+    details.appendChild(summary);
+    details.appendChild(list);
+    container.appendChild(details);
+  }
+
+  row.appendChild(container);
+}
+
+function createRawSourceLink(source, text) {
+  const link = document.createElement("a");
+  link.className = "tree-source-download";
+  link.href = source.url;
+  link.download = source.name;
+  link.textContent = text;
+  return link;
 }
 
 function updateTreeStatus(data) {
@@ -598,6 +844,10 @@ function searchDnvTree(query) {
   }
 
   const results = dnvItems.filter(function (item) {
+    if (!visibleDnvCodes.has(item.code)) {
+      return false;
+    }
+
     const searchText = [item.code, item.commonName, item.name].filter(Boolean).join(" ").toLowerCase();
     return searchText.includes(cleanQuery);
   }).sort(function (first, second) {
@@ -656,7 +906,7 @@ function findPathFromRoot(targetCode) {
       return path;
     }
 
-    getSortedChildren(currentCode).forEach(function (childCode) {
+    getVisibleSortedChildren(currentCode).forEach(function (childCode) {
       if (!visited.has(childCode)) {
         visited.add(childCode);
         queue.push(path.concat(childCode));

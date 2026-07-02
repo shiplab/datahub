@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "based_json": "../Based_JSON/ALMI ATLAS.json",
+  "raw_data_folder": "../raw_DATA/",
+  "links": [
+    {
+      "dnv_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "files": ["raw_GPS_data_ALMI_ATLAS.json"]
+    }
+  ]
+}

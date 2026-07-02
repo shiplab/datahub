@@ -1,4 +1,5 @@
-const GUNNERUS_FOLDER = "../Projects/Gunnerus/";
+const GUNNERUS_FOLDER = "../Projects/Gunnerus/raw_DATA/";
+const GUNNERUS_LINK_FILE = "../Projects/Gunnerus/link_JSON/GUNNERUS_link.json";
 const DNV_DATA_FILE = "../Data/dnv-vis-3-10a.json";
 const SECTION_ORDER = ["crane", "engine", "ship", "wind"];
 const CHART_COLORS = ["#1479a8", "#27833c", "#d47b16"];
@@ -13,6 +14,9 @@ let dnvChildrenByCode = new Map();
 let measurementRecordsByCode = new Map();
 let renderedRowsByCode = new Map();
 let pathCache = new Map();
+let visibleDnvCodes = new Set();
+let sourceLinkData = { links: [], raw_data_folder: "../raw_DATA/", linkFileUrl: GUNNERUS_LINK_FILE };
+let rawSourceLinksByCode = new Map();
 let visibleCharts = [];
 let activeShipMap = null;
 
@@ -120,8 +124,11 @@ async function selectSection(sectionName, content) {
 
     selectedData = data;
     measurementRecordsByCode = buildMeasurementRecords(data, sectionName);
+    rawSourceLinksByCode = buildRawSourceLinksMap(sourceLinkData, sectionName);
+    visibleDnvCodes = buildVisibleDnvCodes(measurementRecordsByCode, sourceLinkData, sectionName);
+    pathCache = new Map();
     renderSectionCharts(content, data, sectionName);
-    updateRenderedTreeValues();
+    renderTreeRoots();
     updateTreeStatus();
     showFirstMappedNode();
   } catch (error) {
@@ -135,12 +142,17 @@ function clearSelectedSection() {
   selectedData = null;
   visibleCharts = [];
   measurementRecordsByCode = new Map();
+  rawSourceLinksByCode = new Map();
+  visibleDnvCodes = new Set();
+  pathCache = new Map();
   disableDownload();
-  updateRenderedTreeValues();
+  renderTreeRoots();
+  treeSearch.value = "";
+  treeSearchResults.innerHTML = "";
   window.history.replaceState({}, "", window.location.pathname);
 
   if (dnvItems.length) {
-    treeStatus.textContent = dnvItems.length + " DNV nodes loaded. Select a Gunnerus data group.";
+    treeStatus.textContent = "Select a Gunnerus data group to display its DNV paths.";
   }
 }
 
@@ -156,6 +168,81 @@ function disableDownload() {
   downloadButton.removeAttribute("download");
   downloadButton.classList.add("disabled");
   downloadButton.setAttribute("aria-disabled", "true");
+}
+
+async function loadGunnerusLinkData() {
+  try {
+    const response = await fetch(GUNNERUS_LINK_FILE);
+
+    if (response.ok) {
+      sourceLinkData = await response.json();
+      sourceLinkData.linkFileUrl = GUNNERUS_LINK_FILE;
+    }
+  } catch (error) {
+    sourceLinkData = { links: [], raw_data_folder: "../raw_DATA/", linkFileUrl: GUNNERUS_LINK_FILE };
+  }
+
+  if (selectedData && selectedSection) {
+    rawSourceLinksByCode = buildRawSourceLinksMap(sourceLinkData, selectedSection);
+    visibleDnvCodes = buildVisibleDnvCodes(measurementRecordsByCode, sourceLinkData, selectedSection);
+    pathCache = new Map();
+    renderTreeRoots();
+    updateTreeStatus();
+    showFirstMappedNode();
+  }
+}
+
+function isLinkForSection(link, sectionName) {
+  return !Array.isArray(link.sections) || !link.sections.length || link.sections.includes(sectionName);
+}
+
+function getDnvPathCodes(dnvPath) {
+  const pathParts = String(dnvPath || "").split("/").filter(Boolean);
+  const versionIndex = pathParts.findIndex(function (part) {
+    return part.toLowerCase() === "vis-3-10a";
+  });
+  return versionIndex >= 0 ? pathParts.slice(versionIndex + 1) : pathParts;
+}
+
+function buildRawSourceLinksMap(linkData, sectionName) {
+  const linksByCode = new Map();
+
+  (linkData && linkData.links || []).forEach(function (link) {
+    if (!isLinkForSection(link, sectionName)) {
+      return;
+    }
+
+    const codes = getDnvPathCodes(link.dnv_path);
+    const code = codes[codes.length - 1];
+
+    if (!code) {
+      return;
+    }
+
+    const sources = linksByCode.get(code) || [];
+
+    (link.files || []).forEach(function (file) {
+      const fileName = typeof file === "string" ? file : file.name;
+      const label = typeof file === "string" ? file : file.label || file.name;
+
+      if (!fileName) {
+        return;
+      }
+
+      const baseUrl = new URL(linkData.linkFileUrl, window.location.href);
+      const fileUrl = new URL((linkData.raw_data_folder || "../raw_DATA/") + fileName, baseUrl).href;
+
+      if (!sources.some(function (source) { return source.url === fileUrl; })) {
+        sources.push({ name: fileName, label: label, url: fileUrl });
+      }
+    });
+
+    if (sources.length) {
+      linksByCode.set(code, sources);
+    }
+  });
+
+  return linksByCode;
 }
 
 function buildMeasurementRecords(data, sectionName) {
@@ -900,6 +987,9 @@ async function loadDnvTree() {
       }
     });
 
+    rawSourceLinksByCode = buildRawSourceLinksMap(sourceLinkData, selectedSection);
+    visibleDnvCodes = buildVisibleDnvCodes(measurementRecordsByCode, sourceLinkData, selectedSection);
+    pathCache = new Map();
     renderTreeRoots();
     updateTreeStatus();
 
@@ -916,7 +1006,7 @@ function renderTreeRoots() {
   treeContainer.innerHTML = "";
   renderedRowsByCode = new Map();
 
-  getSortedChildren("VE").forEach(function (code) {
+  getVisibleSortedChildren("VE").forEach(function (code) {
     treeContainer.appendChild(createTreeNode(code, new Set(["VE"])));
   });
 }
@@ -925,6 +1015,77 @@ function getSortedChildren(code) {
   return (dnvChildrenByCode.get(code) || []).slice().sort(function (first, second) {
     return first.localeCompare(second, undefined, { numeric: true });
   });
+}
+
+function getVisibleSortedChildren(code) {
+  return getSortedChildren(code).filter(function (childCode) {
+    return visibleDnvCodes.has(childCode);
+  });
+}
+
+function buildVisibleDnvCodes(recordsByCode, linkData, sectionName) {
+  const codes = new Set();
+
+  recordsByCode.forEach(function (records) {
+    records.forEach(function (record) {
+      addVisibleDnvPath(getDnvPathCodes(record.dnvPath), codes);
+    });
+  });
+
+  (linkData && linkData.links || []).forEach(function (link) {
+    if (isLinkForSection(link, sectionName)) {
+      addVisibleDnvPath(getDnvPathCodes(link.dnv_path), codes);
+    }
+  });
+
+  return codes;
+}
+
+function addVisibleDnvPath(dnvPathCodes, visibleCodes) {
+  let previousCode = "VE";
+
+  dnvPathCodes.forEach(function (code) {
+    if (!dnvItemsByCode.has(code)) {
+      return;
+    }
+
+    const connectingPath = findPathBetween(previousCode, code);
+
+    if (connectingPath.length) {
+      connectingPath.forEach(function (pathCode) {
+        if (pathCode !== "VE") {
+          visibleCodes.add(pathCode);
+        }
+      });
+    } else {
+      visibleCodes.add(code);
+    }
+
+    previousCode = code;
+  });
+}
+
+function findPathBetween(startCode, targetCode) {
+  const queue = [[startCode]];
+  const visited = new Set([startCode]);
+
+  while (queue.length) {
+    const path = queue.shift();
+    const currentCode = path[path.length - 1];
+
+    if (currentCode === targetCode) {
+      return path;
+    }
+
+    getSortedChildren(currentCode).forEach(function (childCode) {
+      if (!visited.has(childCode)) {
+        visited.add(childCode);
+        queue.push(path.concat(childCode));
+      }
+    });
+  }
+
+  return [];
 }
 
 function createTreeNode(code, ancestorCodes) {
@@ -938,7 +1099,7 @@ function createTreeNode(code, ancestorCodes) {
     return node;
   }
 
-  const availableChildren = getSortedChildren(code).filter(function (childCode) {
+  const availableChildren = getVisibleSortedChildren(code).filter(function (childCode) {
     return !ancestorCodes.has(childCode) && childCode !== code;
   });
   const row = document.createElement("div");
@@ -1002,7 +1163,7 @@ function toggleTreeNode(node, forceOpen) {
     const nextAncestors = new Set(node.treeAncestors);
     nextAncestors.add(node.dataset.code);
 
-    getSortedChildren(node.dataset.code).forEach(function (childCode) {
+    getVisibleSortedChildren(node.dataset.code).forEach(function (childCode) {
       if (!nextAncestors.has(childCode)) {
         children.appendChild(createTreeNode(childCode, nextAncestors));
       }
@@ -1025,30 +1186,76 @@ function updateRenderedTreeValues() {
 
 function updateTreeRowValue(row, code) {
   const oldValues = row.querySelector(".tree-vessel-values");
+  const oldSources = row.querySelector(".tree-source-links");
 
   if (oldValues) {
     oldValues.remove();
   }
 
+  if (oldSources) {
+    oldSources.remove();
+  }
+
   row.classList.remove("has-vessel-data");
+  row.classList.remove("has-source-data");
   const records = measurementRecordsByCode.get(code) || [];
 
-  if (!records.length) {
+  if (records.length) {
+    row.classList.add("has-vessel-data");
+    const values = document.createElement("span");
+    values.className = "tree-vessel-values";
+
+    records.forEach(function (record) {
+      const value = document.createElement("span");
+      value.className = "tree-vessel-value";
+      value.textContent = record.name + (record.unit ? " (" + record.unit + ")" : "");
+      values.appendChild(value);
+    });
+
+    row.appendChild(values);
+  }
+
+  appendRawSourceLinks(row, rawSourceLinksByCode.get(code) || []);
+}
+
+function appendRawSourceLinks(row, sources) {
+  if (!sources.length) {
     return;
   }
 
-  row.classList.add("has-vessel-data");
-  const values = document.createElement("span");
-  values.className = "tree-vessel-values";
+  const container = document.createElement("span");
+  container.className = "tree-source-links";
+  row.classList.add("has-source-data");
 
-  records.forEach(function (record) {
-    const value = document.createElement("span");
-    value.className = "tree-vessel-value";
-    value.textContent = record.name + (record.unit ? " (" + record.unit + ")" : "");
-    values.appendChild(value);
-  });
+  if (sources.length === 1) {
+    container.appendChild(createRawSourceLink(sources[0], "Download raw source"));
+  } else {
+    const details = document.createElement("details");
+    details.className = "tree-source-menu";
+    const summary = document.createElement("summary");
+    summary.textContent = "Raw sources (" + sources.length + ")";
+    const list = document.createElement("span");
+    list.className = "tree-source-list";
 
-  row.appendChild(values);
+    sources.forEach(function (source) {
+      list.appendChild(createRawSourceLink(source, source.label));
+    });
+
+    details.appendChild(summary);
+    details.appendChild(list);
+    container.appendChild(details);
+  }
+
+  row.appendChild(container);
+}
+
+function createRawSourceLink(source, text) {
+  const link = document.createElement("a");
+  link.className = "tree-source-download";
+  link.href = source.url;
+  link.download = source.name;
+  link.textContent = text;
+  return link;
 }
 
 function updateTreeStatus() {
@@ -1057,7 +1264,7 @@ function updateTreeStatus() {
   }
 
   if (!selectedSection) {
-    treeStatus.textContent = dnvItems.length + " DNV nodes loaded. Select a Gunnerus data group.";
+    treeStatus.textContent = "Select a Gunnerus data group to display its DNV paths.";
     return;
   }
 
@@ -1086,6 +1293,10 @@ function searchDnvTree(query) {
   }
 
   const results = dnvItems.filter(function (item) {
+    if (!visibleDnvCodes.has(item.code)) {
+      return false;
+    }
+
     const searchText = [item.code, item.commonName, item.name].filter(Boolean).join(" ").toLowerCase();
     return searchText.includes(cleanQuery);
   }).sort(function (first, second) {
@@ -1138,7 +1349,7 @@ function findPathFromRoot(targetCode) {
       return path;
     }
 
-    getSortedChildren(currentCode).forEach(function (childCode) {
+    getVisibleSortedChildren(currentCode).forEach(function (childCode) {
       if (!visited.has(childCode)) {
         visited.add(childCode);
         queue.push(path.concat(childCode));
@@ -1231,3 +1442,4 @@ document.addEventListener("click", function (event) {
 
 loadGunnerusSections();
 loadDnvTree();
+loadGunnerusLinkData();
