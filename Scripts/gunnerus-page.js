@@ -188,11 +188,16 @@ function buildMeasurementRecords(data, sectionName) {
 }
 
 function shouldUseField(fieldName, sectionName) {
-  if (sectionName !== "wind") {
-    return true;
+  if (sectionName === "wind") {
+    return fieldName.endsWith("/Wind_Speed") || fieldName.endsWith("/Wind_Direction");
   }
 
-  return fieldName.endsWith("/Wind_Speed") || fieldName.endsWith("/Wind_Direction");
+  if (sectionName === "ship") {
+    const shortName = fieldName.split("/").pop().toLowerCase();
+    return shortName === "heave" || shortName === "pitch" || shortName === "roll";
+  }
+
+  return true;
 }
 
 function getLastDnvCode(dnvPath) {
@@ -217,8 +222,11 @@ function renderSectionCharts(container, data, sectionName) {
   overview.appendChild(description);
   container.appendChild(overview);
 
-  const charts = sectionName === "engine" ? createEngineChartDefinitions(data) :
-    createStandardChartDefinitions(data, sectionName);
+  let charts = [];
+
+  if (sectionName !== "crane" && sectionName !== "engine") {
+    charts = createStandardChartDefinitions(data, sectionName);
+  }
 
   if (sectionName === "ship") {
     const mapCard = createShipMapCard(data);
@@ -231,7 +239,7 @@ function renderSectionCharts(container, data, sectionName) {
   const count = document.createElement("p");
   count.className = "graph-count";
   count.textContent = sectionName === "ship" ?
-    charts.length + " graphs and 1 trajectory map — every available JSON point is used." :
+    charts.length + " graphs and 1 trajectory map — the latest 24 hours are shown." :
     charts.length + " graphs — every available JSON point is used.";
   container.appendChild(count);
 
@@ -270,7 +278,7 @@ function createStandardChartDefinitions(data, sectionName) {
         return;
       }
 
-      charts.push({
+      const chartDefinition = {
         title: formatFieldName(field.field),
         subtitle: dataset.signal_group || dataset.source_file || "Gunnerus data",
         unit: field.unit || "",
@@ -281,7 +289,17 @@ function createStandardChartDefinitions(data, sectionName) {
           values: dataset.timeseries && dataset.timeseries[field.field] || [],
           color: CHART_COLORS[0]
         }]
-      });
+      };
+
+      if (sectionName === "ship") {
+        const filteredChart = filterChartDefinitionToLast24Hours(chartDefinition);
+
+        if (filteredChart.timestamps.length) {
+          charts.push(filteredChart);
+        }
+      } else {
+        charts.push(chartDefinition);
+      }
     });
   });
 
@@ -511,11 +529,13 @@ function buildShipRoutes(data) {
       });
     }
 
-    if (points.length) {
+    const recentPoints = filterPointsToLast24Hours(points);
+
+    if (recentPoints.length) {
       routes.push({
         name: getRouteName(dataset.signal_group, datasetIndex),
         color: CHART_COLORS[routes.length % CHART_COLORS.length],
-        points: points
+        points: recentPoints
       });
     }
   });
@@ -539,6 +559,90 @@ function normalizeMapCoordinate(value, maximumDegrees) {
   }
 
   return decimalDegrees * sign;
+}
+
+function filterChartDefinitionToLast24Hours(chartDefinition) {
+  const timestamps = chartDefinition.timestamps || [];
+  const series = chartDefinition.series || [];
+
+  if (!timestamps.length || !series.length) {
+    return {
+      ...chartDefinition,
+      timestamps: [],
+      series: series.map(function (item) {
+        return { ...item, values: [] };
+      })
+    };
+  }
+
+  const parsedTimestamps = timestamps.map(function (timestamp) {
+    const date = new Date(timestamp);
+    return Number.isNaN(date.getTime()) ? null : date;
+  });
+
+  const endTimestamp = parsedTimestamps[parsedTimestamps.length - 1];
+
+  if (!endTimestamp) {
+    return {
+      ...chartDefinition,
+      timestamps: [],
+      series: series.map(function (item) {
+        return { ...item, values: [] };
+      })
+    };
+  }
+
+  const startTimestamp = new Date(endTimestamp.getTime() - 24 * 60 * 60 * 1000);
+  const pointCount = Math.min(timestamps.length, ...series.map(function (item) {
+    return item.values ? item.values.length : 0;
+  }));
+  const filteredTimestamps = [];
+  const filteredSeries = series.map(function (item) {
+    return { ...item, values: [] };
+  });
+
+  for (let index = 0; index < pointCount; index += 1) {
+    const timestamp = parsedTimestamps[index];
+
+    if (!timestamp || timestamp < startTimestamp || timestamp > endTimestamp) {
+      continue;
+    }
+
+    filteredTimestamps.push(timestamps[index]);
+
+    filteredSeries.forEach(function (item, seriesIndex) {
+      item.values.push(series[seriesIndex].values[index]);
+    });
+  }
+
+  return {
+    ...chartDefinition,
+    timestamps: filteredTimestamps,
+    series: filteredSeries
+  };
+}
+
+function filterPointsToLast24Hours(points) {
+  if (!points.length) {
+    return [];
+  }
+
+  const parsedTimestamps = points.map(function (point) {
+    const date = new Date(point.timestamp);
+    return Number.isNaN(date.getTime()) ? null : date;
+  });
+  const endTimestamp = parsedTimestamps[parsedTimestamps.length - 1];
+
+  if (!endTimestamp) {
+    return [];
+  }
+
+  const startTimestamp = new Date(endTimestamp.getTime() - 24 * 60 * 60 * 1000);
+
+  return points.filter(function (point, index) {
+    const timestamp = parsedTimestamps[index];
+    return timestamp && timestamp >= startTimestamp && timestamp <= endTimestamp;
+  });
 }
 
 function getRouteName(signalGroup, datasetIndex) {
