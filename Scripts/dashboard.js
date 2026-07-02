@@ -2,7 +2,8 @@ async function loadProjectBlocks() {
   const container = document.getElementById("project-blocks");
   const blockFiles = [
     "Blocs/Rina_blocs.html",
-    "Blocs/Gunnerus_blocs.html"
+    "Blocs/Gunnerus_blocs.html",
+    "Blocs/test_bloc.html"
   ];
 
   container.innerHTML = "";
