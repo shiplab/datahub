@@ -13,7 +13,6 @@ let vesselCache = new Map();
 let renderedRowsByCode = new Map();
 let pathCache = new Map();
 let visibleDnvCodes = new Set();
-let rawSourceLinksByCode = new Map();
 let vesselLinkCache = new Map();
 
 const accordionsContainer = document.getElementById("vessel-accordions");
@@ -117,7 +116,6 @@ async function selectVessel(vesselName, content) {
     selectedVesselData = data;
     selectedVesselLinkData = linkData;
     vesselValuesByCode = buildVesselValuesMap(data);
-    rawSourceLinksByCode = buildRawSourceLinksMap(linkData);
     visibleDnvCodes = buildVisibleDnvCodes(data, linkData);
     pathCache = new Map();
     renderVesselInformation(content, data);
@@ -134,7 +132,6 @@ function clearSelectedVessel() {
   selectedVesselData = null;
   selectedVesselLinkData = null;
   vesselValuesByCode = new Map();
-  rawSourceLinksByCode = new Map();
   visibleDnvCodes = new Set();
   pathCache = new Map();
   disableDownload();
@@ -188,41 +185,34 @@ async function loadVesselLinkData(vesselName) {
   return linkData;
 }
 
-function buildRawSourceLinksMap(linkData) {
-  const linksByCode = new Map();
+function normalizeDnvPath(dnvPath) {
+  return String(dnvPath || "").replace(/\/+$/, "").toLowerCase();
+}
 
-  (linkData && linkData.links || []).forEach(function (link) {
-    const codes = getDnvCodes(link.dnv_path);
-    const code = codes[codes.length - 1];
+function getSourceForDnvPath(linkData, dnvPath) {
+  if (!linkData) {
+    return null;
+  }
 
-    if (!code) {
-      return;
-    }
-
-    const sources = linksByCode.get(code) || [];
-
-    (link.files || []).forEach(function (file) {
-      const fileName = typeof file === "string" ? file : file.name;
-      const label = typeof file === "string" ? file : file.label || file.name;
-
-      if (!fileName) {
-        return;
-      }
-
-      const baseUrl = new URL(linkData.linkFileUrl, window.location.href);
-      const fileUrl = new URL((linkData.raw_data_folder || "../raw_DATA/") + fileName, baseUrl).href;
-
-      if (!sources.some(function (source) { return source.url === fileUrl; })) {
-        sources.push({ name: fileName, label: label, url: fileUrl });
-      }
-    });
-
-    if (sources.length) {
-      linksByCode.set(code, sources);
-    }
+  const wantedPath = normalizeDnvPath(dnvPath);
+  const matchingLink = (linkData.links || []).find(function (link) {
+    return normalizeDnvPath(link.dnv_path) === wantedPath;
   });
+  const source = matchingLink || linkData.default_source || {};
 
-  return linksByCode;
+  if (source.file) {
+    const baseUrl = new URL(linkData.linkFileUrl, window.location.href);
+    return {
+      file: source.file,
+      url: new URL((linkData.raw_data_folder || "../raw_DATA/") + source.file, baseUrl).href
+    };
+  }
+
+  if (source.message) {
+    return { message: source.message };
+  }
+
+  return null;
 }
 
 function disableDownload() {
@@ -534,7 +524,6 @@ async function loadDnvTree() {
     });
 
     if (selectedVesselData) {
-      rawSourceLinksByCode = buildRawSourceLinksMap(selectedVesselLinkData);
       visibleDnvCodes = buildVisibleDnvCodes(selectedVesselData, selectedVesselLinkData);
       pathCache = new Map();
       renderTreeRoots();
@@ -756,76 +745,87 @@ function updateRenderedTreeValues() {
 
 function updateTreeRowValue(row, code) {
   const oldValues = row.querySelector(".tree-vessel-values");
-  const oldSources = row.querySelector(".tree-source-links");
 
   if (oldValues) {
     oldValues.remove();
   }
 
-  if (oldSources) {
-    oldSources.remove();
-  }
-
   row.classList.remove("has-vessel-data");
-  row.classList.remove("has-source-data");
   const records = vesselValuesByCode.get(code) || [];
+  const linkedEntries = (selectedVesselLinkData && selectedVesselLinkData.links || []).filter(function (link) {
+    const codes = getDnvCodes(link.dnv_path);
+    return codes[codes.length - 1] === code && !records.some(function (record) {
+      return normalizeDnvPath(record.dnvSource) === normalizeDnvPath(link.dnv_path);
+    });
+  });
 
-  if (records.length) {
+  if (records.length || linkedEntries.length) {
     row.classList.add("has-vessel-data");
     const values = document.createElement("span");
     values.className = "tree-vessel-values";
 
     records.forEach(function (record) {
-      const value = document.createElement("span");
-      value.className = "tree-vessel-value";
-      value.textContent = record.name + ": " + simpleText(record.value);
-      values.appendChild(value);
+      appendClickableTreeValue(
+        values,
+        record.name + ": " + simpleText(record.value),
+        record.dnvSource,
+        selectedVesselLinkData
+      );
+    });
+
+    linkedEntries.forEach(function (link) {
+      appendClickableTreeValue(
+        values,
+        link.label || "Linked raw data",
+        link.dnv_path,
+        selectedVesselLinkData
+      );
     });
 
     row.appendChild(values);
   }
-
-  appendRawSourceLinks(row, rawSourceLinksByCode.get(code) || []);
 }
 
-function appendRawSourceLinks(row, sources) {
-  if (!sources.length) {
-    return;
-  }
+function appendClickableTreeValue(container, text, dnvPath, linkData) {
+  const source = getSourceForDnvPath(linkData, dnvPath);
+  let value;
 
-  const container = document.createElement("span");
-  container.className = "tree-source-links";
-  row.classList.add("has-source-data");
-
-  if (sources.length === 1) {
-    container.appendChild(createRawSourceLink(sources[0], "Download raw source"));
+  if (source && source.file) {
+    value = document.createElement("a");
+    value.href = source.url;
+    value.download = source.file;
+    value.title = "Download " + source.file;
+  } else if (source && source.message) {
+    value = document.createElement("button");
+    value.type = "button";
+    value.title = "Source information";
   } else {
-    const details = document.createElement("details");
-    details.className = "tree-source-menu";
-    const summary = document.createElement("summary");
-    summary.textContent = "Raw sources (" + sources.length + ")";
-    const list = document.createElement("span");
-    list.className = "tree-source-list";
-
-    sources.forEach(function (source) {
-      list.appendChild(createRawSourceLink(source, source.label));
-    });
-
-    details.appendChild(summary);
-    details.appendChild(list);
-    container.appendChild(details);
+    value = document.createElement("span");
   }
 
-  row.appendChild(container);
+  value.className = "tree-vessel-value";
+  value.textContent = text;
+  container.appendChild(value);
+
+  if (source && source.message) {
+    value.addEventListener("click", function () {
+      showSourceMessage(source.message);
+    });
+  }
 }
 
-function createRawSourceLink(source, text) {
-  const link = document.createElement("a");
-  link.className = "tree-source-download";
-  link.href = source.url;
-  link.download = source.name;
-  link.textContent = text;
-  return link;
+function showSourceMessage(message) {
+  let messageBox = document.getElementById("source-message-box");
+
+  if (!messageBox) {
+    messageBox = document.createElement("div");
+    messageBox.id = "source-message-box";
+    messageBox.className = "source-message-box";
+    document.body.appendChild(messageBox);
+  }
+
+  messageBox.textContent = message;
+  messageBox.hidden = false;
 }
 
 function updateTreeStatus(data) {

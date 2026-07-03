@@ -16,7 +16,6 @@ let renderedRowsByCode = new Map();
 let pathCache = new Map();
 let visibleDnvCodes = new Set();
 let sourceLinkData = { links: [], raw_data_folder: "../raw_DATA/", linkFileUrl: GUNNERUS_LINK_FILE };
-let rawSourceLinksByCode = new Map();
 let visibleCharts = [];
 let activeShipMap = null;
 
@@ -124,7 +123,6 @@ async function selectSection(sectionName, content) {
 
     selectedData = data;
     measurementRecordsByCode = buildMeasurementRecords(data, sectionName);
-    rawSourceLinksByCode = buildRawSourceLinksMap(sourceLinkData, sectionName);
     visibleDnvCodes = buildVisibleDnvCodes(measurementRecordsByCode, sourceLinkData, sectionName);
     pathCache = new Map();
     renderSectionCharts(content, data, sectionName);
@@ -142,7 +140,6 @@ function clearSelectedSection() {
   selectedData = null;
   visibleCharts = [];
   measurementRecordsByCode = new Map();
-  rawSourceLinksByCode = new Map();
   visibleDnvCodes = new Set();
   pathCache = new Map();
   disableDownload();
@@ -183,7 +180,6 @@ async function loadGunnerusLinkData() {
   }
 
   if (selectedData && selectedSection) {
-    rawSourceLinksByCode = buildRawSourceLinksMap(sourceLinkData, selectedSection);
     visibleDnvCodes = buildVisibleDnvCodes(measurementRecordsByCode, sourceLinkData, selectedSection);
     pathCache = new Map();
     renderTreeRoots();
@@ -204,45 +200,30 @@ function getDnvPathCodes(dnvPath) {
   return versionIndex >= 0 ? pathParts.slice(versionIndex + 1) : pathParts;
 }
 
-function buildRawSourceLinksMap(linkData, sectionName) {
-  const linksByCode = new Map();
+function normalizeDnvPath(dnvPath) {
+  return String(dnvPath || "").replace(/\/+$/, "").toLowerCase();
+}
 
-  (linkData && linkData.links || []).forEach(function (link) {
-    if (!isLinkForSection(link, sectionName)) {
-      return;
-    }
+function getSourceForDnvPath(linkData, dnvPath, sectionName) {
+  if (!linkData) {
+    return null;
+  }
 
-    const codes = getDnvPathCodes(link.dnv_path);
-    const code = codes[codes.length - 1];
-
-    if (!code) {
-      return;
-    }
-
-    const sources = linksByCode.get(code) || [];
-
-    (link.files || []).forEach(function (file) {
-      const fileName = typeof file === "string" ? file : file.name;
-      const label = typeof file === "string" ? file : file.label || file.name;
-
-      if (!fileName) {
-        return;
-      }
-
-      const baseUrl = new URL(linkData.linkFileUrl, window.location.href);
-      const fileUrl = new URL((linkData.raw_data_folder || "../raw_DATA/") + fileName, baseUrl).href;
-
-      if (!sources.some(function (source) { return source.url === fileUrl; })) {
-        sources.push({ name: fileName, label: label, url: fileUrl });
-      }
-    });
-
-    if (sources.length) {
-      linksByCode.set(code, sources);
-    }
+  const wantedPath = normalizeDnvPath(dnvPath);
+  const matchingLink = (linkData.links || []).find(function (link) {
+    return isLinkForSection(link, sectionName) && normalizeDnvPath(link.dnv_path) === wantedPath;
   });
+  const source = matchingLink || linkData.default_source || {};
 
-  return linksByCode;
+  if (!source.file) {
+    return null;
+  }
+
+  const baseUrl = new URL(linkData.linkFileUrl, window.location.href);
+  return {
+    file: source.file,
+    url: new URL((linkData.raw_data_folder || "../raw_DATA/") + source.file, baseUrl).href
+  };
 }
 
 function buildMeasurementRecords(data, sectionName) {
@@ -987,7 +968,6 @@ async function loadDnvTree() {
       }
     });
 
-    rawSourceLinksByCode = buildRawSourceLinksMap(sourceLinkData, selectedSection);
     visibleDnvCodes = buildVisibleDnvCodes(measurementRecordsByCode, sourceLinkData, selectedSection);
     pathCache = new Map();
     renderTreeRoots();
@@ -1186,76 +1166,58 @@ function updateRenderedTreeValues() {
 
 function updateTreeRowValue(row, code) {
   const oldValues = row.querySelector(".tree-vessel-values");
-  const oldSources = row.querySelector(".tree-source-links");
 
   if (oldValues) {
     oldValues.remove();
   }
 
-  if (oldSources) {
-    oldSources.remove();
-  }
-
   row.classList.remove("has-vessel-data");
-  row.classList.remove("has-source-data");
   const records = measurementRecordsByCode.get(code) || [];
+  const linkedEntries = (sourceLinkData.links || []).filter(function (link) {
+    const codes = getDnvPathCodes(link.dnv_path);
+    return isLinkForSection(link, selectedSection) && codes[codes.length - 1] === code &&
+      !records.some(function (record) {
+        return normalizeDnvPath(record.dnvPath) === normalizeDnvPath(link.dnv_path);
+      });
+  });
 
-  if (records.length) {
+  if (records.length || linkedEntries.length) {
     row.classList.add("has-vessel-data");
     const values = document.createElement("span");
     values.className = "tree-vessel-values";
 
     records.forEach(function (record) {
-      const value = document.createElement("span");
-      value.className = "tree-vessel-value";
-      value.textContent = record.name + (record.unit ? " (" + record.unit + ")" : "");
-      values.appendChild(value);
+      appendClickableTreeValue(
+        values,
+        record.name + (record.unit ? " (" + record.unit + ")" : ""),
+        record.dnvPath
+      );
+    });
+
+    linkedEntries.forEach(function (link) {
+      appendClickableTreeValue(values, link.label || "Linked raw data", link.dnv_path);
     });
 
     row.appendChild(values);
   }
-
-  appendRawSourceLinks(row, rawSourceLinksByCode.get(code) || []);
 }
 
-function appendRawSourceLinks(row, sources) {
-  if (!sources.length) {
-    return;
-  }
+function appendClickableTreeValue(container, text, dnvPath) {
+  const source = getSourceForDnvPath(sourceLinkData, dnvPath, selectedSection);
+  let value;
 
-  const container = document.createElement("span");
-  container.className = "tree-source-links";
-  row.classList.add("has-source-data");
-
-  if (sources.length === 1) {
-    container.appendChild(createRawSourceLink(sources[0], "Download raw source"));
+  if (source) {
+    value = document.createElement("a");
+    value.href = source.url;
+    value.download = source.file;
+    value.title = "Download " + source.file;
   } else {
-    const details = document.createElement("details");
-    details.className = "tree-source-menu";
-    const summary = document.createElement("summary");
-    summary.textContent = "Raw sources (" + sources.length + ")";
-    const list = document.createElement("span");
-    list.className = "tree-source-list";
-
-    sources.forEach(function (source) {
-      list.appendChild(createRawSourceLink(source, source.label));
-    });
-
-    details.appendChild(summary);
-    details.appendChild(list);
-    container.appendChild(details);
+    value = document.createElement("span");
   }
 
-  row.appendChild(container);
-}
-
-function createRawSourceLink(source, text) {
-  const link = document.createElement("a");
-  link.className = "tree-source-download";
-  link.href = source.url;
-  link.download = source.name;
-  link.textContent = text;
-  return link;
+  value.className = "tree-vessel-value";
+  value.textContent = text;
+  container.appendChild(value);
 }
 
 function updateTreeStatus() {
