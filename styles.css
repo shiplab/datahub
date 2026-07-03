@@ -167,8 +167,7 @@ hr {
 
 /* RINA vessel page */
 .rina-page {
-  height: 100vh;
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .rina-topbar {
@@ -231,8 +230,188 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  height: calc(100vh - 76px);
+  height: 720px;
   padding: 12px;
+}
+
+/* Raw files browser (top of the Gunnerus page) */
+.raw-files-section {
+  --raw-files-height: 460px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  height: var(--raw-files-height);
+  padding: 12px 12px 0;
+}
+
+.raw-files-content-panel,
+.raw-files-list-panel {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 5px 14px rgba(28, 55, 68, 0.12);
+}
+
+.raw-files-content-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 18px;
+  line-height: 1.5;
+}
+
+.raw-files-list {
+  display: grid;
+  flex: 1;
+  gap: 8px;
+  overflow-y: auto;
+  padding: 10px 10px 14px;
+  align-content: start;
+}
+
+.raw-file-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 9px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #f9fbfc;
+}
+
+.raw-file-row.active {
+  border-color: var(--blue);
+  background: var(--light-blue);
+}
+
+.raw-file-name {
+  overflow: hidden;
+  padding: 0;
+  border: 0;
+  color: var(--navy);
+  background: transparent;
+  font-size: 0.85rem;
+  font-weight: bold;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.raw-file-name:hover {
+  color: var(--blue);
+}
+
+.raw-file-download {
+  flex: 0 0 auto;
+  padding: 5px 8px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  color: var(--blue);
+  background: white;
+  font-size: 0.72rem;
+  text-decoration: none;
+}
+
+.raw-file-download:hover {
+  color: white;
+  background: var(--blue);
+}
+
+.raw-file-path {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-family: Consolas, monospace;
+  font-size: 0.72rem;
+  overflow-wrap: anywhere;
+}
+
+.raw-file-schema {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.raw-file-schema-group h4 {
+  margin: 0 0 6px;
+  color: var(--navy);
+  font-size: 0.88rem;
+}
+
+.raw-file-schema-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.raw-file-schema-field {
+  padding: 3px 8px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #f6f8f9;
+  font-family: Consolas, monospace;
+  font-size: 0.74rem;
+}
+
+.raw-file-json-preview {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #f9fbfc;
+  overflow: auto;
+  font-family: Consolas, monospace;
+  font-size: 0.74rem;
+  white-space: pre-wrap;
+}
+
+.raw-file-pdf-embed {
+  width: 100%;
+  height: 380px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+.raw-file-csv-wrap {
+  margin-top: 10px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: white;
+}
+
+.raw-file-csv-preview {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Consolas, monospace;
+  font-size: 0.74rem;
+}
+
+.raw-file-csv-preview th,
+.raw-file-csv-preview td {
+  padding: 5px 8px;
+  border: 1px solid #e4e9eb;
+  white-space: nowrap;
+}
+
+.raw-file-csv-preview th {
+  color: var(--navy);
+  background: #f8fafb;
+  text-align: left;
+}
+
+.raw-file-csv-preview tr:nth-child(even) td {
+  background: #f9fbfc;
+}
+
+.raw-file-csv-more {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .vessel-panel,
@@ -806,7 +985,8 @@ button.tree-vessel-value:hover {
 @media (max-width: 900px) {
   .project-blocks,
   .project-card-content,
-  .rina-layout {
+  .rina-layout,
+  .raw-files-section {
     grid-template-columns: 1fr;
   }
 
@@ -832,6 +1012,15 @@ button.tree-vessel-value:hover {
   .vessel-panel,
   .dnv-panel {
     height: 78vh;
+  }
+
+  .raw-files-section {
+    height: auto;
+  }
+
+  .raw-files-content-panel,
+  .raw-files-list-panel {
+    height: 50vh;
   }
 }
 

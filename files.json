@@ -1,4 +1,3 @@
-
 {
   "name": "Projects",
   "type": "folder",
@@ -42,43 +41,379 @@
         {
           "name": "crane_accelerometres_data1.csv",
           "type": "file",
-          "description": "First crane accelerometer and motion dataset.",
+          "description": "data about the crane tip movement, October 31 2023 from 9:22 to 12:11 UTC",
+          "details": {
+            "localisation_data": [
+              "locationTimestamp_since1970",
+              "locationLatitude",
+              "locationLongitude",
+              "locationAltitude",
+              "locationSpeed",
+              "locationSpeedAccuracy",
+              "locationCourse",
+              "locationCourseAccuracy",
+              "locationVerticalAccuracy",
+              "locationHorizontalAccuracy",
+              "locationFloor"
+            ],
+            "compass_data": [
+              "locationHeadingTimestamp_since1970",
+              "locationHeadingX",
+              "locationHeadingY",
+              "locationHeadingZ",
+              "locationTrueHeading",
+              "locationMagneticHeading",
+              "locationHeadingAccuracy"
+            ],
+            "accelerometer_data": [
+              "accelerometerTimestamp_sinceReboot",
+              "accelerometerAccelerationX",
+              "accelerometerAccelerationY",
+              "accelerometerAccelerationZ"
+            ],
+            "gyroscope_data": [
+              "gyroTimestamp_sinceReboot",
+              "gyroRotationX",
+              "gyroRotationY",
+              "gyroRotationZ"
+            ],
+            "magnetometer_data": [
+              "magnetometerTimestamp_sinceReboot",
+              "magnetometerX",
+              "magnetometerY",
+              "magnetometerZ"
+            ],
+            "motion_data": [
+              "motionTimestamp_sinceReboot",
+              "motionYaw",
+              "motionRoll",
+              "motionPitch",
+              "motionRotationRateX",
+              "motionRotationRateY",
+              "motionRotationRateZ",
+              "motionUserAccelerationX",
+              "motionUserAccelerationY",
+              "motionUserAccelerationZ",
+              "motionAttitudeReferenceFrame",
+              "motionQuaternionX",
+              "motionQuaternionY",
+              "motionQuaternionZ",
+              "motionQuaternionW",
+              "motionGravityX",
+              "motionGravityY",
+              "motionGravityZ",
+              "motionMagneticFieldX",
+              "motionMagneticFieldY",
+              "motionMagneticFieldZ",
+              "motionHeading",
+              "motionMagneticFieldCalibrationAccuracy"
+            ],
+            "device_state_data": [
+              "activityTimestamp_sinceReboot",
+              "activity",
+              "activityActivityConfidence",
+              "activityActivityStartDate",
+              "pedometerStartDate",
+              "pedometerNumberofSteps",
+              "pedometerAverageActivePace",
+              "pedometerCurrentPace",
+              "pedometerCurrentCadence",
+              "pedometerDistance",
+              "pedometerFloorAscended",
+              "pedometerFloorDescended",
+              "pedometerEndDate",
+              "altimeterTimestamp_sinceReboot",
+              "altimeterReset",
+              "altimeterRelativeAltitude",
+              "altimeterPressure",
+              "IP_Timestamp_since1970",
+              "IP_en0",
+              "IP_pdp_ip0",
+              "deviceID",
+              "deviceOrientationTimeStamp_since1970",
+              "deviceOrientation",
+              "batteryTimeStamp_since1970",
+              "batteryState",
+              "batteryLevel",
+              "label"
+            ]
+          },
           "path": "Projects/Gunnerus/raw_DATA/crane_accelerometres_data1.csv"
         },
         {
           "name": "crane_accelerometres_data2.csv",
           "type": "file",
-          "description": "Second crane accelerometer and motion dataset.",
+          "description": "data about the crane tip movement, October 31 2023 from 9:22 to 12:11 UTC",
+          "details": {
+            "localisation_data": [
+              "locationTimestamp_since1970",
+              "locationLatitude",
+              "locationLongitude",
+              "locationAltitude",
+              "locationSpeed",
+              "locationSpeedAccuracy",
+              "locationCourse",
+              "locationCourseAccuracy",
+              "locationVerticalAccuracy",
+              "locationHorizontalAccuracy",
+              "locationFloor"
+            ],
+            "compass_data": [
+              "locationHeadingTimestamp_since1970",
+              "locationHeadingX",
+              "locationHeadingY",
+              "locationHeadingZ",
+              "locationTrueHeading",
+              "locationMagneticHeading",
+              "locationHeadingAccuracy"
+            ],
+            "accelerometer_data": [
+              "accelerometerTimestamp_sinceReboot",
+              "accelerometerAccelerationX",
+              "accelerometerAccelerationY",
+              "accelerometerAccelerationZ"
+            ],
+            "gyroscope_data": [
+              "gyroTimestamp_sinceReboot",
+              "gyroRotationX",
+              "gyroRotationY",
+              "gyroRotationZ"
+            ],
+            "magnetometer_data": [
+              "magnetometerTimestamp_sinceReboot",
+              "magnetometerX",
+              "magnetometerY",
+              "magnetometerZ"
+            ],
+            "motion_data": [
+              "motionTimestamp_sinceReboot",
+              "motionYaw",
+              "motionRoll",
+              "motionPitch",
+              "motionRotationRateX",
+              "motionRotationRateY",
+              "motionRotationRateZ",
+              "motionUserAccelerationX",
+              "motionUserAccelerationY",
+              "motionUserAccelerationZ",
+              "motionAttitudeReferenceFrame",
+              "motionQuaternionX",
+              "motionQuaternionY",
+              "motionQuaternionZ",
+              "motionQuaternionW",
+              "motionGravityX",
+              "motionGravityY",
+              "motionGravityZ",
+              "motionMagneticFieldX",
+              "motionMagneticFieldY",
+              "motionMagneticFieldZ",
+              "motionHeading",
+              "motionMagneticFieldCalibrationAccuracy"
+            ],
+            "device_state_data": [
+              "activityTimestamp_sinceReboot",
+              "activity",
+              "activityActivityConfidence",
+              "activityActivityStartDate",
+              "pedometerStartDate",
+              "pedometerNumberofSteps",
+              "pedometerAverageActivePace",
+              "pedometerCurrentPace",
+              "pedometerCurrentCadence",
+              "pedometerDistance",
+              "pedometerFloorAscended",
+              "pedometer"
+            ]
+          },
           "path": "Projects/Gunnerus/raw_DATA/crane_accelerometres_data2.csv"
         },
         {
           "name": "time_series_motion_prediction_data1.csv",
           "type": "file",
-          "description": "First vessel motion prediction time-series dataset.",
+          "description": "Vessel motion prediction time-series dataset  October 31 from 10:00 to 12:09 ",
+          "details": {
+            "hull_movement_data": [
+              "seconds",
+              "time",
+              "latitude",
+              "longitude",
+              "height",
+              "heave",
+              "northVelocity",
+              "eastVelocity",
+              "downVelocity",
+              "roll",
+              "pitch",
+              "heading",
+              "rollRate",
+              "pitchRate",
+              "yawRate",
+              "air_gap",
+              "Wavex_Hm0",
+              "RangeFinder_Hm0",
+              "Wave directional spectrum",
+              "Calculated_Hm0",
+              "Calculated_Dm"
+            ]
+          },
           "path": "Projects/Gunnerus/raw_DATA/time_series_motion_prediction_data1.csv"
         },
         {
           "name": "time_series_motion_prediction_data2.csv",
           "type": "file",
-          "description": "Second vessel motion prediction time-series dataset.",
+          "description": "Vessel motion prediction time-series dataset October 31 from 13:20 to 15:24",
+          "details": {
+            "hull_movement_data": [
+              "seconds",
+              "time",
+              "latitude",
+              "longitude",
+              "height",
+              "heave",
+              "northVelocity",
+              "eastVelocity",
+              "downVelocity",
+              "roll",
+              "pitch",
+              "heading",
+              "rollRate",
+              "pitchRate",
+              "yawRate",
+              "air_gap",
+              "Wavex_Hm0",
+              "RangeFinder_Hm0",
+              "Wave directional spectrum",
+              "Calculated_Hm0",
+              "Calculated_Dm"
+            ]
+          },
           "path": "Projects/Gunnerus/raw_DATA/time_series_motion_prediction_data2.csv"
         },
         {
           "name": "vessel_data_from_NUC_Gunnerus_W44.csv",
           "type": "file",
-          "description": "Gunnerus crane, engine, navigation and wave data from the NUC computer.",
+          "description": "Gunnerus crane, engine, navigation and wave data from the NUC computer. This data covers the whole 24 hours of October 31 ",
+          "details": {
+            "Crane1": [
+              "dp_main_cyl",
+              "extension_length_outer_boom",
+              "main_boom_angle",
+              "outer_boom_angle",
+              "slewing_angle"
+            ],
+            "Engine1": [
+              "boost_pressure",
+              "coolant_temperature",
+              "engine_load",
+              "engine_speed",
+              "exhaust_temperature1",
+              "exhaust_temperature2",
+              "fuel_consumption",
+              "lube_oil_pressure",
+              "lube_oil_temperature"
+            ],
+            "Engine2": [
+              "boost_pressure",
+              "coolant_temperature",
+              "engine_load",
+              "engine_speed",
+              "exhaust_temperature1",
+              "exhaust_temperature2",
+              "fuel_consumption",
+              "lube_oil_pressure",
+              "lube_oil_temperature"
+            ],
+            "Engine3": [
+              "boost_pressure",
+              "coolant_temperature",
+              "engine_load",
+              "engine_speed",
+              "exhaust_temperature1",
+              "exhaust_temperature2",
+              "fuel_consumption",
+              "lube_oil_pressure",
+              "lube_oil_temperature"
+            ],
+            "GPS": {
+              "SeapathGPSGga": [
+                "Latitude",
+                "Longitude"
+              ],
+              "SeapathGPSVbw": [
+                "LonGroundSpeed",
+                "TransGroundSpeed"
+              ],
+              "SeapathGPSVtg": [
+                "CourseTrue",
+                "SpeedKmHr",
+                "SpeedKnots"
+              ]
+            },
+            "movement": {
+              "SeapathMRU": [
+                "Heading",
+                "Heave",
+                "Pitch",
+                "Roll"
+              ],
+              "MRU_rates": [
+                "PitchRate",
+                "RollRate",
+                "VertVel",
+                "YawRate"
+              ]
+            },
+            "WaveRadar": [
+              "STW_east_component",
+              "STW_north_component",
+              "Current_speed_east_vector",
+              "Current_speed_north_vector",
+              "Mean_period",
+              "Primary_wave_mean_direction",
+              "Primary_wave_peak_direction",
+              "Primary_wave_peak_period",
+              "Significant_wave_height",
+              "Significant_wave_period",
+              "Total_energy_directional_spread",
+              "Total_energy_mean_direction"
+            ],
+            "dpThruster": [
+              "FeedbackProsent",
+              "ThrusterSetpunktProsent"
+            ],
+            "dpWind": [
+              "Wind_Direction",
+              "Wind_Speed"
+            ],
+            "AzimuthThruster": {
+              "hcx_port_mp": [
+                "AzimuthFeedback",
+                "AzimuthOrder",
+                "Level_order",
+                "LoadFeedback",
+                "Maneuver_Transit_mode",
+                "Power_mode_RPM_Mode",
+                "RPMFeedback",
+                "RPMOrder",
+                "Running"
+              ],
+              "hcx_stbd_mp": [
+                "AzimuthFeedback",
+                "AzimuthOrder",
+                "Level_order",
+                "LoadFeedback",
+                "Maneuver_Transit_mode",
+                "Power_mode_RPM_Mode",
+                "RPMFeedback",
+                "RPMOrder",
+                "Running"
+              ]
+            }
+          },
           "path": "Projects/Gunnerus/raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
-        },
-        {
-          "name": "vessel_data_from_nuc_pc_w44_daily_data.csv",
-          "type": "file",
-          "description": "Daily Gunnerus navigation and vessel motion data from the NUC computer.",
-          "path": "Projects/Gunnerus/raw_DATA/vessel_data_from_nuc_pc_w44_daily_data.csv"
         }
-        ]
-        
+      ]
     },
-
     {
       "name": "RINA Sig. Ships",
       "type": "folder",

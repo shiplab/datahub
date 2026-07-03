@@ -1,6 +1,8 @@
 const GUNNERUS_FOLDER = "../Projects/Gunnerus/raw_DATA/";
 const GUNNERUS_LINK_FILE = "../Projects/Gunnerus/link_JSON/GUNNERUS_link.json";
 const DNV_DATA_FILE = "../Data/dnv-vis-3-10a.json";
+const FILES_JSON_URL = "../files.json";
+const RAW_FILES_ROOT = "../";
 const SECTION_ORDER = ["crane", "engine", "ship", "wind"];
 const CHART_COLORS = ["#1479a8", "#27833c", "#d47b16"];
 
@@ -18,6 +20,8 @@ let visibleDnvCodes = new Set();
 let sourceLinkData = { links: [], raw_data_folder: "../raw_DATA/", linkFileUrl: GUNNERUS_LINK_FILE };
 let visibleCharts = [];
 let activeShipMap = null;
+let rawFiles = [];
+let selectedRawFile = null;
 
 const accordionsContainer = document.getElementById("gunnerus-accordions");
 const downloadButton = document.getElementById("download-gunnerus-json");
@@ -25,6 +29,10 @@ const treeContainer = document.getElementById("dnv-tree");
 const treeStatus = document.getElementById("tree-status");
 const treeSearch = document.getElementById("tree-search");
 const treeSearchResults = document.getElementById("tree-search-results");
+const rawFilesListEl = document.getElementById("raw-files-list");
+const rawFileContentEl = document.getElementById("raw-file-content");
+const rawFileTitleEl = document.getElementById("raw-file-title");
+const rawFileSubtitleEl = document.getElementById("raw-file-subtitle");
 
 async function loadGunnerusSections() {
   try {
@@ -83,6 +91,246 @@ function createSectionAccordions() {
       }
     });
   });
+}
+
+async function loadRawFiles() {
+  try {
+    const response = await fetch(FILES_JSON_URL);
+    const filesData = await response.json();
+    const gunnerusProject = (filesData.children || []).find(function (project) {
+      return project.name === "Gunnerus";
+    });
+
+    rawFiles = (gunnerusProject && gunnerusProject.children || []).filter(function (file) {
+      return file.type === "file";
+    });
+
+    renderRawFilesList();
+  } catch (error) {
+    rawFilesListEl.innerHTML = "<p class='error-message'>The raw file list could not be loaded from files.json.</p>";
+  }
+}
+
+function renderRawFilesList() {
+  rawFilesListEl.innerHTML = "";
+
+  if (!rawFiles.length) {
+    rawFilesListEl.innerHTML = "<p class='loading-message'>No raw file found.</p>";
+    return;
+  }
+
+  rawFiles.forEach(function (file) {
+    const row = document.createElement("div");
+    row.className = "raw-file-row";
+
+    const nameButton = document.createElement("button");
+    nameButton.type = "button";
+    nameButton.className = "raw-file-name";
+    nameButton.textContent = file.name;
+    nameButton.title = file.name;
+    nameButton.addEventListener("click", function () {
+      selectRawFile(file, row);
+    });
+
+    const downloadLink = document.createElement("a");
+    downloadLink.className = "raw-file-download";
+    downloadLink.href = RAW_FILES_ROOT + file.path;
+    downloadLink.download = file.name;
+    downloadLink.textContent = "Download";
+
+    row.appendChild(nameButton);
+    row.appendChild(downloadLink);
+    rawFilesListEl.appendChild(row);
+  });
+}
+
+async function selectRawFile(file, row) {
+  selectedRawFile = file;
+
+  rawFilesListEl.querySelectorAll(".raw-file-row").forEach(function (item) {
+    item.classList.toggle("active", item === row);
+  });
+
+  rawFileTitleEl.textContent = file.name;
+  rawFileSubtitleEl.textContent = file.description || "";
+  rawFileContentEl.innerHTML = "<p class='loading-message'>Loading file content...</p>";
+
+  const body = document.createElement("div");
+  const path = document.createElement("p");
+  path.className = "raw-file-path";
+  path.textContent = file.path;
+  body.appendChild(path);
+
+  if (file.details) {
+    body.appendChild(buildRawFileSchemaPreview(file.details));
+  } else if (file.name.toLowerCase().endsWith(".json")) {
+    body.appendChild(await buildRawFileJsonPreview(file.path));
+  } else if (file.name.toLowerCase().endsWith(".csv")) {
+    body.appendChild(await buildRawFileCsvPreview(file.path));
+  } else if (file.name.toLowerCase().endsWith(".pdf")) {
+    body.appendChild(buildRawFilePdfPreview(file.path));
+  } else {
+    const note = document.createElement("p");
+    note.className = "loading-message";
+    note.textContent = "No preview available for this file type — use Download to view it.";
+    body.appendChild(note);
+  }
+
+  if (selectedRawFile === file) {
+    rawFileContentEl.innerHTML = "";
+    rawFileContentEl.appendChild(body);
+  }
+}
+
+function buildRawFileSchemaPreview(details) {
+  const wrapper = document.createElement("div");
+  wrapper.className = "raw-file-schema";
+
+  Object.keys(details).forEach(function (groupName) {
+    const group = document.createElement("div");
+    group.className = "raw-file-schema-group";
+
+    const heading = document.createElement("h4");
+    heading.textContent = readableName(groupName);
+    group.appendChild(heading);
+
+    const fields = document.createElement("div");
+    fields.className = "raw-file-schema-fields";
+
+    flattenRawFileSchema(details[groupName]).forEach(function (fieldName) {
+      const tag = document.createElement("span");
+      tag.className = "raw-file-schema-field";
+      tag.textContent = fieldName;
+      fields.appendChild(tag);
+    });
+
+    group.appendChild(fields);
+    wrapper.appendChild(group);
+  });
+
+  return wrapper;
+}
+
+function flattenRawFileSchema(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  if (value && typeof value === "object") {
+    return Object.keys(value).reduce(function (fields, key) {
+      return fields.concat(flattenRawFileSchema(value[key]).map(function (fieldName) {
+        return key + "." + fieldName;
+      }));
+    }, []);
+  }
+
+  return [];
+}
+
+async function buildRawFileJsonPreview(path) {
+  try {
+    const response = await fetch(RAW_FILES_ROOT + path);
+
+    if (!response.ok) {
+      throw new Error("File not found");
+    }
+
+    const jsonText = await response.text();
+    const validJsonText = jsonText.replace(/\bNaN\b/g, "null").replace(/-?Infinity/g, "null");
+    const data = JSON.parse(validJsonText);
+    const preview = document.createElement("pre");
+    preview.className = "raw-file-json-preview";
+    const fullText = JSON.stringify(data, null, 2);
+    preview.textContent = fullText.length > 4000 ?
+      fullText.slice(0, 4000) + "\n... (truncated, download the file to see it all)" :
+      fullText;
+    return preview;
+  } catch (error) {
+    const errorMessage = document.createElement("p");
+    errorMessage.className = "error-message";
+    errorMessage.textContent = "This JSON file could not be loaded.";
+    return errorMessage;
+  }
+}
+
+function buildRawFilePdfPreview(path) {
+  const embed = document.createElement("embed");
+  embed.className = "raw-file-pdf-embed";
+  embed.src = RAW_FILES_ROOT + path;
+  embed.type = "application/pdf";
+  return embed;
+}
+
+async function buildRawFileCsvPreview(path) {
+  const maxColumns = 8;
+  const maxRows = 12;
+
+  try {
+    const response = await fetch(RAW_FILES_ROOT + path, {
+      headers: { Range: "bytes=0-8000" }
+    });
+
+    if (!response.ok && response.status !== 206) {
+      throw new Error("File not found");
+    }
+
+    const text = await response.text();
+    const lines = text.split(/\r?\n/).filter(function (line) {
+      return line.length > 0;
+    });
+
+    if (response.status === 206 && lines.length > 1) {
+      lines.pop();
+    }
+
+    const rows = lines.slice(0, maxRows).map(function (line) {
+      return line.split(",");
+    });
+
+    if (!rows.length) {
+      throw new Error("Empty file");
+    }
+
+    const wrap = document.createElement("div");
+    wrap.className = "raw-file-csv-wrap";
+    const table = document.createElement("table");
+    table.className = "raw-file-csv-preview";
+
+    rows.forEach(function (row, rowIndex) {
+      const tableRow = document.createElement("tr");
+
+      row.slice(0, maxColumns).forEach(function (cell) {
+        const cellElement = document.createElement(rowIndex === 0 ? "th" : "td");
+        cellElement.textContent = cell.trim();
+        tableRow.appendChild(cellElement);
+      });
+
+      if (row.length > maxColumns) {
+        const moreCell = document.createElement(rowIndex === 0 ? "th" : "td");
+        moreCell.className = "raw-file-csv-more";
+        moreCell.textContent = "+" + (row.length - maxColumns) + " more columns";
+        tableRow.appendChild(moreCell);
+      }
+
+      table.appendChild(tableRow);
+    });
+
+    wrap.appendChild(table);
+
+    const note = document.createElement("p");
+    note.className = "loading-message";
+    note.textContent = "Preview of the first rows and columns only — download the file to see it all.";
+
+    const container = document.createElement("div");
+    container.appendChild(wrap);
+    container.appendChild(note);
+    return container;
+  } catch (error) {
+    const errorMessage = document.createElement("p");
+    errorMessage.className = "error-message";
+    errorMessage.textContent = "This CSV file could not be previewed.";
+    return errorMessage;
+  }
 }
 
 function closeOtherAccordions(openDetails) {
@@ -1405,3 +1653,4 @@ document.addEventListener("click", function (event) {
 loadGunnerusSections();
 loadDnvTree();
 loadGunnerusLinkData();
+loadRawFiles();
