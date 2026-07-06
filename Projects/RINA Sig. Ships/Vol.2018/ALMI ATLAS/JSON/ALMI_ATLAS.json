@@ -39,7 +39,7 @@
   "series": [
     {
       "Name": "shipbuilder",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
       "Value": "Hyundai Samho Heavy Industries Co. Ltd",
       "source_context": {
@@ -61,7 +61,7 @@
     },
     {
       "Name": "vessel_s_name",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000",
       "Value": "Almi Atlas",
       "source_context": {
@@ -83,7 +83,7 @@
     },
     {
       "Name": "hull_no",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.1",
       "Value": "S913",
       "source_context": {
@@ -105,7 +105,7 @@
     },
     {
       "Name": "owner_operator",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/004/004.2",
       "Value": "Almi Tankers",
       "source_context": {
@@ -127,7 +127,7 @@
     },
     {
       "Name": "owner_country",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/007",
       "Value": "Greece",
       "source_context": {
@@ -149,7 +149,7 @@
     },
     {
       "Name": "shipbuilder_country",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Republic of Korea",
       "source_context": {
@@ -171,7 +171,7 @@
     },
     {
       "Name": "designer",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/1",
       "Value": "Hyundai Samho Heavy Industries Co. Ltd",
       "source_context": {
@@ -193,7 +193,7 @@
     },
     {
       "Name": "model_test_establishment_used",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Hyundai Maritime Research Institute",
       "source_context": {
@@ -215,7 +215,7 @@
     },
     {
       "Name": "flag",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/007",
       "Value": "Liberia",
       "source_context": {
@@ -237,7 +237,7 @@
     },
     {
       "Name": "imo_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/001",
       "Value": "9816323",
       "source_context": {
@@ -259,7 +259,7 @@
     },
     {
       "Name": "total_number_of_sister_ships_already_completed_excluding_ship_presented",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "1",
       "source_context": {
@@ -281,7 +281,7 @@
     },
     {
       "Name": "total_number_of_sister_ships_still_on_order",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "nil",
       "source_context": {
@@ -303,7 +303,7 @@
     },
     {
       "Name": "technical_particulars_length_oa",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/620/623/623.4/M211/M211.1/M211.13/M211.131",
       "Value": "336.08m",
       "source_context": {
@@ -325,7 +325,7 @@
     },
     {
       "Name": "technical_particulars_length_bp",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "330m",
       "source_context": {
@@ -347,7 +347,7 @@
     },
     {
       "Name": "technical_particulars_breadth_moulded",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/150/151",
       "Value": "60m",
       "source_context": {
@@ -369,7 +369,7 @@
     },
     {
       "Name": "depth_moulded_to_upper_deck",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/150",
       "Value": "30.3m",
       "source_context": {
@@ -391,7 +391,7 @@
     },
     {
       "Name": "width_of_double_skin_side",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/110/111/111.8/111.81/H403",
       "Value": "3.0m",
       "source_context": {
@@ -413,7 +413,7 @@
     },
     {
       "Name": "width_of_double_skin_bottom",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/120/121/121i/H341/H341.4/H341.43",
       "Value": "2.9m",
       "source_context": {
@@ -435,7 +435,7 @@
     },
     {
       "Name": "draught_scantling",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/100/107/107.3",
       "Value": "22.6m",
       "source_context": {
@@ -457,7 +457,7 @@
     },
     {
       "Name": "draught_design",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "21m",
       "source_context": {
@@ -479,7 +479,7 @@
     },
     {
       "Name": "gross",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1000/1000.1/F401/F401.2",
       "Value": "162,306gt",
       "source_context": {
@@ -501,7 +501,7 @@
     },
     {
       "Name": "displacement",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1000/1000.1/F401/F401.2",
       "Value": "138,911t",
       "source_context": {
@@ -523,7 +523,7 @@
     },
     {
       "Name": "lightweight",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1000/1000.1/F401/F401.2",
       "Value": "46,974t",
       "source_context": {
@@ -545,7 +545,7 @@
     },
     {
       "Name": "deadweight_design",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1000/1000.1/F401/F401.2",
       "Value": "286,489dwt",
       "source_context": {
@@ -567,7 +567,7 @@
     },
     {
       "Name": "deadweight_scantling",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1000/1000.1/F401/F401.2",
       "Value": "315,221dwt",
       "source_context": {
@@ -589,7 +589,7 @@
     },
     {
       "Name": "block_co_efficient",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1020/1022/1022.4/1022.43/1022.432/1022.4323/C932",
       "Value": "0.7063",
       "source_context": {
@@ -611,7 +611,7 @@
     },
     {
       "Name": "speed_service",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "15.2knots at design draught knots",
       "source_context": {
@@ -633,7 +633,7 @@
     },
     {
       "Name": "cargo_capacity_liquid_volume",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.6/M221",
       "Value": "357,777.8m^3",
       "source_context": {
@@ -655,7 +655,7 @@
     },
     {
       "Name": "bunkers_heavy_oil",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.6/M221",
       "Value": "4,609.2m^3",
       "source_context": {
@@ -677,7 +677,7 @@
     },
     {
       "Name": "bunkers_diesel_oil",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.6/M221",
       "Value": "1,002.7m^3",
       "source_context": {
@@ -699,7 +699,7 @@
     },
     {
       "Name": "bunkers_water_ballast",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.6/M221",
       "Value": "93,901.6m^3",
       "source_context": {
@@ -721,7 +721,7 @@
     },
     {
       "Name": "daily_fuel_consumption_tonnes_day_main_engine_only",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/620/620.1/M201/M201.3",
       "Value": "169.59 g/kW·hr (MCR) g/kW·hr",
       "source_context": {
@@ -743,7 +743,7 @@
     },
     {
       "Name": "classification_society_and_notations",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/006",
       "Value": "DNVGL 1A1, Tanker for oil, BIS, BWM (T, E(S)),",
       "source_context": {
@@ -765,7 +765,7 @@
     },
     {
       "Name": "clean_coat_pspc_b_c_csa_fls1_csr_construction",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "49.8%",
       "source_context": {
@@ -787,7 +787,7 @@
     },
     {
       "Name": "main_engines_design",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Hyundai-B&W",
       "source_context": {
@@ -809,7 +809,7 @@
     },
     {
       "Name": "main_engines_model",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "7G80ME-C9.5-EGRTC",
       "source_context": {
@@ -831,7 +831,7 @@
     },
     {
       "Name": "main_engines_manufacturer",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Hyundai Heavy Industries Co., Ltd, Engine & Machinery Division",
       "source_context": {
@@ -853,7 +853,7 @@
     },
     {
       "Name": "main_engines_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "1",
       "source_context": {
@@ -875,7 +875,7 @@
     },
     {
       "Name": "main_engines_type_of_fuel",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "HFO",
       "source_context": {
@@ -897,7 +897,7 @@
     },
     {
       "Name": "main_engines_output_of_each_engine",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "26,000kW",
       "source_context": {
@@ -919,7 +919,7 @@
     },
     {
       "Name": "propellers_material",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/620/620.1/M201",
       "Value": "Ni-Al-Bronze",
       "source_context": {
@@ -941,7 +941,7 @@
     },
     {
       "Name": "propellers_designer_manufacturer",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
       "Value": "Hyundai Heavy Industries Co., Ltd, Engine & Machinery Division",
       "source_context": {
@@ -963,7 +963,7 @@
     },
     {
       "Name": "propellers_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
       "Value": "1",
       "source_context": {
@@ -985,7 +985,7 @@
     },
     {
       "Name": "propellers_fixed_controllable_pitch",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Fixed",
       "source_context": {
@@ -1007,7 +1007,7 @@
     },
     {
       "Name": "propellers_diameter",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/410/413/413i/413.1/CS7",
       "Value": "10.5m",
       "source_context": {
@@ -1029,7 +1029,7 @@
     },
     {
       "Name": "diesel_driven_alternators_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "3",
       "source_context": {
@@ -1051,7 +1051,7 @@
     },
     {
       "Name": "diesel_driven_alternators_engine_make_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Hyundai Heavy Industries Co., Ltd, Engine & Machinery Division / Himsen 9H21/32",
       "source_context": {
@@ -1073,7 +1073,7 @@
     },
     {
       "Name": "diesel_driven_alternators_type_of_fuel",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/620/620.1/M201",
       "Value": "HFO",
       "source_context": {
@@ -1095,7 +1095,7 @@
     },
     {
       "Name": "diesel_driven_alternators_engine_output_speed_each_set",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "1,940kW / 900rpm kW",
       "source_context": {
@@ -1117,7 +1117,7 @@
     },
     {
       "Name": "diesel_driven_alternators_alternator_make_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Hyundai Electric & Energy Systems Co., Ltd / HFC7 638-8P",
       "source_context": {
@@ -1139,7 +1139,7 @@
     },
     {
       "Name": "diesel_driven_alternators_alternator_output_speed_each_set",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "1,830kW / 900rpm kW",
       "source_context": {
@@ -1161,7 +1161,7 @@
     },
     {
       "Name": "exhaust_gas_scrubbing_equipment_manufacturer",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Alfa Laval Nijmegen B.V",
       "source_context": {
@@ -1183,7 +1183,7 @@
     },
     {
       "Name": "exhaust_gas_scrubbing_equipment_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "PureSOx ECA Open Loop U-type system",
       "source_context": {
@@ -1205,7 +1205,7 @@
     },
     {
       "Name": "exhaust_gas_scrubbing_equipment_on_main_engines",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1200a/1290/1291/C1051/C1051.7/CS1/C101/C101.3/C101.3i/C101.31/C101.311/C467/C467.4",
       "Value": "Yes",
       "source_context": {
@@ -1227,7 +1227,7 @@
     },
     {
       "Name": "exhaust_gas_scrubbing_equipment_on_auxiliary_engines",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Yes",
       "source_context": {
@@ -1249,7 +1249,7 @@
     },
     {
       "Name": "boilers_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/300a/350/353",
       "Value": "3",
       "source_context": {
@@ -1271,7 +1271,7 @@
     },
     {
       "Name": "boilers_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10",
       "Value": "MAC-45B x 2 / Aalborg OC-TCi x 1",
       "source_context": {
@@ -1293,7 +1293,7 @@
     },
     {
       "Name": "boilers_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10",
       "Value": "Mitsubishi Heavy Industries Co., Ltd / Alfa Laval",
       "source_context": {
@@ -1315,7 +1315,7 @@
     },
     {
       "Name": "boilers_output_each_boiler",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/610/611/611.2/611.2i/611.21/CS10",
       "Value": "45,000kg/hr x 2 / 4,400kg/hr x 1 kg/hr",
       "source_context": {
@@ -1337,7 +1337,7 @@
     },
     {
       "Name": "cargo_cranes_cargo_gear_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1200a/1250/1251/1251.1/CS17",
       "Value": "2",
       "source_context": {
@@ -1359,7 +1359,7 @@
     },
     {
       "Name": "cargo_cranes_cargo_gear_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Dongnam Marine Crane Co., Ltd",
       "source_context": {
@@ -1381,7 +1381,7 @@
     },
     {
       "Name": "cargo_cranes_cargo_gear_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1200a/1290/1291/C1051/C1051.3",
       "Value": "Electro-hydraulic",
       "source_context": {
@@ -1403,7 +1403,7 @@
     },
     {
       "Name": "cargo_cranes_cargo_gear_performance",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2/G51.22",
       "Value": "20t SWL",
       "source_context": {
@@ -1425,7 +1425,7 @@
     },
     {
       "Name": "provision_cranes_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "2",
       "source_context": {
@@ -1447,7 +1447,7 @@
     },
     {
       "Name": "provision_cranes_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.3",
       "Value": "Electro-hydraulic",
       "source_context": {
@@ -1469,7 +1469,7 @@
     },
     {
       "Name": "engine_room_crane_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C324/C324.3",
       "Value": "1",
       "source_context": {
@@ -1491,7 +1491,7 @@
     },
     {
       "Name": "engine_room_crane_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C324/C324.5",
       "Value": "Electro-magnetic",
       "source_context": {
@@ -1513,7 +1513,7 @@
     },
     {
       "Name": "other_cranes_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Dongnam Marine Crane Co., Ltd",
       "source_context": {
@@ -1535,7 +1535,7 @@
     },
     {
       "Name": "provision_cranes_task",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.4",
       "Value": "Provision crane",
       "source_context": {
@@ -1557,7 +1557,7 @@
     },
     {
       "Name": "engine_room_crane_task",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/4",
       "Value": "Engine room crane",
       "source_context": {
@@ -1579,7 +1579,7 @@
     },
     {
       "Name": "provision_cranes_performance",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "10t, 3t SWL",
       "source_context": {
@@ -1601,7 +1601,7 @@
     },
     {
       "Name": "engine_room_crane_performance",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/2",
       "Value": "10t SWL",
       "source_context": {
@@ -1623,7 +1623,7 @@
     },
     {
       "Name": "mooring_equipment_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H121",
       "Value": "10",
       "source_context": {
@@ -1645,7 +1645,7 @@
     },
     {
       "Name": "mooring_equipment_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/300a/320/322",
       "Value": "Hydraulic",
       "source_context": {
@@ -1667,7 +1667,7 @@
     },
     {
       "Name": "mooring_equipment_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Rolls-Royce",
       "source_context": {
@@ -1689,7 +1689,7 @@
     },
     {
       "Name": "special_lifesaving_equipment_number_of_each_and_capacity",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/864/864.1/864.11/GS9/G71/G71.2",
       "Value": "2 / 36 persons",
       "source_context": {
@@ -1711,7 +1711,7 @@
     },
     {
       "Name": "special_lifesaving_equipment_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/864/864.1/864.11/GS9/G71/G71.2/G71.22",
       "Value": "Hyundai Lifeboats Co., Ltd",
       "source_context": {
@@ -1733,7 +1733,7 @@
     },
     {
       "Name": "special_lifesaving_equipment_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/100a/100/104/104.1/104.1i/HS1/H131/H131.6/H131.61",
       "Value": "Totally enclosed",
       "source_context": {
@@ -1755,7 +1755,7 @@
     },
     {
       "Name": "cargo_tanks_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1020/1021/1021s/1021.2/1021.2i",
       "Value": "17",
       "source_context": {
@@ -1777,7 +1777,7 @@
     },
     {
       "Name": "cargo_tanks_grades_of_cargo_carried",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1000a/1020/1021/1021s/1021.3/1021.3i",
       "Value": "Crude oil",
       "source_context": {
@@ -1799,7 +1799,7 @@
     },
     {
       "Name": "cargo_tanks_coated_tanks",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.1/861.11/G51/G51.2",
       "Value": "Hempel / Hempadur XO 17870",
       "source_context": {
@@ -1821,7 +1821,7 @@
     },
     {
       "Name": "cargo_pumps_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/2",
       "Value": "3",
       "source_context": {
@@ -1843,7 +1843,7 @@
     },
     {
       "Name": "cargo_pumps_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
       "Value": "KV450-4",
       "source_context": {
@@ -1865,7 +1865,7 @@
     },
     {
       "Name": "testing_if_new_one_appears",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.5",
       "Value": "TESTING IF NEW ONE APPEARS",
       "source_context": {
@@ -1887,7 +1887,7 @@
     },
     {
       "Name": "cargo_pumps_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
       "Value": "Shinko Industries Ltd",
       "source_context": {
@@ -1909,7 +1909,7 @@
     },
     {
       "Name": "cargo_pumps_capacity",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
       "Value": "5,000m^3/h each m^3/h",
       "source_context": {
@@ -1931,7 +1931,7 @@
     },
     {
       "Name": "cargo_control_system_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1300a/1320/1321/1321i/1321.1/U101/U101.2/U101.26",
       "Value": "KSB Seil Co., Ltd",
       "source_context": {
@@ -1953,7 +1953,7 @@
     },
     {
       "Name": "cargo_control_system_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/300a/330/332/332.1/332.1i/332.11/C1053/C1053.7",
       "Value": "Electro-hydraulic remote control",
       "source_context": {
@@ -1975,7 +1975,7 @@
     },
     {
       "Name": "ballast_control_system_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.6/M221",
       "Value": "KSB Seil Co., Ltd",
       "source_context": {
@@ -1997,7 +1997,7 @@
     },
     {
       "Name": "ballast_control_system_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.6/M221",
       "Value": "Hydraulic and remote control",
       "source_context": {
@@ -2019,7 +2019,7 @@
     },
     {
       "Name": "water_ballast_treatment_system_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.5/S271/S271.2",
       "Value": "Hyundai Heavy Industries Co., Ltd, Engine & Machinery Division",
       "source_context": {
@@ -2041,7 +2041,7 @@
     },
     {
       "Name": "water_ballast_treatment_system_capacity",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/650/652/652.5/S271",
       "Value": "6,000m^3/h",
       "source_context": {
@@ -2063,7 +2063,7 @@
     },
     {
       "Name": "complement_officers",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "14",
       "source_context": {
@@ -2085,7 +2085,7 @@
     },
     {
       "Name": "complement_crew",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "22",
       "source_context": {
@@ -2107,7 +2107,7 @@
     },
     {
       "Name": "complement_stern_appendages_special_rudders",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/400a/420/420i/421/421.2/HS5",
       "Value": "Half Duct Bridge control system",
       "source_context": {
@@ -2129,7 +2129,7 @@
     },
     {
       "Name": "complement_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Hyundai Electric & Energy Systems Co., Ltd",
       "source_context": {
@@ -2151,7 +2151,7 @@
     },
     {
       "Name": "complement_type",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "No direct DNV VIS path",
       "Value": "Console",
       "source_context": {
@@ -2173,7 +2173,7 @@
     },
     {
       "Name": "complement_one_man_operation",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/700a/710",
       "Value": "Yes",
       "source_context": {
@@ -2195,7 +2195,7 @@
     },
     {
       "Name": "radars_number",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/1300a/1320/1321/1321i/1321.1/U101/U101.2/U101.26",
       "Value": "2",
       "source_context": {
@@ -2217,7 +2217,7 @@
     },
     {
       "Name": "radars_make",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
       "Value": "JRC",
       "source_context": {
@@ -2239,7 +2239,7 @@
     },
     {
       "Name": "radars_model",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
       "Value": "JMR-9225-6X",
       "source_context": {
@@ -2261,7 +2261,7 @@
     },
     {
       "Name": "radars_integrated_bridge_system",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
       "Value": "No",
       "source_context": {
@@ -2283,7 +2283,7 @@
     },
     {
       "Name": "radars_almi_atlas",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/700a/720/723/723.1/723.13/NS2",
       "Value": "Very large crude carrier",
       "source_context": {
@@ -2305,7 +2305,7 @@
     },
     {
       "Name": "contract_date",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000",
       "Value": "3 August 2016",
       "source_context": {
@@ -2327,7 +2327,7 @@
     },
     {
       "Name": "launch_float_out_date",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/002/002.1",
       "Value": "30 December 2017",
       "source_context": {
@@ -2349,7 +2349,7 @@
     },
     {
       "Name": "delivery_date",
-      "Link": "raw_DATA/ALMI ATLAS.pdf",
+      "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/000a/000/002/002.2",
       "Value": "13 March 2018",
       "source_context": {
@@ -2371,7 +2371,7 @@
     },
     {
       "Name": "gps_data",
-      "Link": "raw_DATA/raw_GPS_data_ALMI_ATLAS.json",
+      "Link": "../raw_DATA/raw_GPS_data_ALMI_ATLAS.json",
       "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
       "Value": null,
       "source_context": {

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project details</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body class="rina-page">
+  <header class="rina-topbar project-details-header">
+    <a class="back-link" href="../index.html">Back to dashboard</a>
+    <h1 id="project-title">Loading project...</h1>
+    <a id="get-json" class="download-button disabled" aria-disabled="true">Get Json</a>
+    <div class="legend">
+      <span class="legend-mapped">DNV mapped</span>
+      <span class="legend-unmapped">No DNV path</span>
+    </div>
+  </header>
+
+  <main class="rina-layout project-details-layout">
+    <section class="vessel-panel project-information-panel">
+      <div class="panel-heading">
+        <h2>Project information</h2>
+        <p>Open a category or a measurement to view its information.</p>
+      </div>
+      <div class="project-information-scroll">
+        <div id="project-summary"></div>
+        <div id="project-map"></div>
+        <div id="project-groups" class="vessel-accordions"></div>
+      </div>
+    </section>
+
+    <section class="dnv-panel">
+      <div class="panel-heading dnv-heading-row">
+        <div>
+          <h2>DNV hierarchy</h2>
+          <p>Only paths containing project information are displayed.</p>
+        </div>
+        <span class="version-badge">VIS 3-10a</span>
+      </div>
+      <div class="tree-search-box">
+        <input id="tree-search" type="search" placeholder="Search a DNV code or name" autocomplete="off">
+        <div id="tree-search-results" class="tree-search-results"></div>
+      </div>
+      <div id="tree-status" class="tree-status">Loading DNV paths...</div>
+      <div id="dnv-tree" class="dnv-tree"></div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="../Scripts/project-config.js"></script>
+  <script src="../Scripts/project-json-loader.js"></script>
+  <script src="../Scripts/project-time-series-charts.js"></script>
+  <script src="../Scripts/project-vessel-route-map.js"></script>
+  <script src="../Scripts/project-dnv-tree.js"></script>
+  <script src="../Scripts/project-information-display.js"></script>
+  <script src="../Scripts/project-details-page.js"></script>
+</body>
+</html>

@@ -234,6 +234,93 @@ hr {
   padding: 12px;
 }
 
+/* Common Atlas and Gunnerus details page */
+.project-details-header {
+  position: relative;
+}
+
+.project-details-header > .download-button {
+  position: absolute;
+  left: 50%;
+  min-width: 130px;
+  padding: 9px 18px;
+  transform: translateX(-50%);
+}
+
+.project-details-layout {
+  height: calc(100vh - 76px);
+  min-height: 720px;
+}
+
+.project-information-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-information-scroll {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.project-summary-box {
+  margin: 0 0 12px;
+}
+
+.project-summary-box h3 {
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.project-summary-box p {
+  margin: 0;
+}
+
+.project-information-scroll .vessel-accordions {
+  height: auto;
+  padding: 0;
+  overflow: visible;
+}
+
+.project-group-content {
+  padding: 12px;
+}
+
+.measurement-accordion {
+  padding: 0;
+  border-left-width: 4px;
+}
+
+.measurement-accordion.mapped {
+  border-left-color: var(--green);
+}
+
+.measurement-accordion.unmapped {
+  border-left-color: var(--red);
+}
+
+.measurement-accordion > summary {
+  padding: 12px;
+  color: var(--navy);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.measurement-content {
+  padding: 0 12px 12px;
+  border-top: 1px solid var(--border);
+}
+
+.measurement-content .graph-heading {
+  align-items: center;
+  padding-top: 10px;
+}
+
+.project-information-scroll .ship-map-card {
+  margin-top: 0;
+}
+
 /* Raw files browser (top of the Gunnerus page) */
 .raw-files-section {
   --raw-files-height: 460px;
@@ -1018,12 +1105,22 @@ button.tree-vessel-value:hover {
     flex-wrap: wrap;
   }
 
+  .project-details-header > .download-button {
+    position: static;
+    margin-left: auto;
+    transform: none;
+  }
+
   .legend {
     width: 100%;
     margin-left: 0;
   }
 
   .rina-layout {
+    height: auto;
+  }
+
+  .project-details-layout {
     height: auto;
   }
 
