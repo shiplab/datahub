@@ -230,7 +230,7 @@ hr {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  height: 720px;
+  min-height: 720px;
   padding: 12px;
 }
 
@@ -761,6 +761,22 @@ hr {
   color: #185f2a;
   background: white;
   font-size: 0.73rem;
+}
+
+.tree-download-button {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 4px 8px;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  background: var(--blue);
+  color: white;
+  text-decoration: none;
+  font-size: 0.78rem;
+}
+
+.tree-download-button:hover {
+  background: #0f5b8b;
 }
 
 a.tree-vessel-value {

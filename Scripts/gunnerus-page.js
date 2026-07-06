@@ -504,15 +504,6 @@ function buildMeasurementRecords(data, sectionName) {
 }
 
 function shouldUseField(fieldName, sectionName) {
-  if (sectionName === "wind") {
-    return fieldName.endsWith("/Wind_Speed") || fieldName.endsWith("/Wind_Direction");
-  }
-
-  if (sectionName === "ship") {
-    const shortName = fieldName.split("/").pop().toLowerCase();
-    return shortName === "heave" || shortName === "pitch" || shortName === "roll";
-  }
-
   return true;
 }
 
@@ -540,7 +531,9 @@ function renderSectionCharts(container, data, sectionName) {
 
   let charts = [];
 
-  if (sectionName !== "crane" && sectionName !== "engine") {
+  if (sectionName === "engine") {
+    charts = createEngineChartDefinitions(data);
+  } else {
     charts = createStandardChartDefinitions(data, sectionName);
   }
 
@@ -554,9 +547,11 @@ function renderSectionCharts(container, data, sectionName) {
 
   const count = document.createElement("p");
   count.className = "graph-count";
-  count.textContent = sectionName === "ship" ?
-    charts.length + " graphs and 1 trajectory map — the latest 24 hours are shown." :
-    charts.length + " graphs — every available JSON point is used.";
+  if (sectionName === "ship") {
+    count.textContent = charts.length + " graphs and 1 trajectory map — the latest 24 hours are shown.";
+  } else {
+    count.textContent = charts.length + " graphs — the latest 24 hours are shown.";
+  }
   container.appendChild(count);
 
   if (!charts.length) {
@@ -607,14 +602,10 @@ function createStandardChartDefinitions(data, sectionName) {
         }]
       };
 
-      if (sectionName === "ship") {
-        const filteredChart = filterChartDefinitionToLast24Hours(chartDefinition);
+      const filteredChart = filterChartDefinitionToLast24Hours(chartDefinition);
 
-        if (filteredChart.timestamps.length) {
-          charts.push(filteredChart);
-        }
-      } else {
-        charts.push(chartDefinition);
+      if (filteredChart.timestamps.length && chartDefinitionSpansAtLeast(filteredChart, 2 * 60 * 60 * 1000)) {
+        charts.push(filteredChart);
       }
     });
   });
@@ -659,9 +650,16 @@ function createEngineChartDefinitions(data) {
     });
   });
 
-  return Array.from(chartsByMeasure.values()).sort(function (first, second) {
-    return first.title.localeCompare(second.title);
-  });
+  return Array.from(chartsByMeasure.values())
+    .map(function (chart) {
+      return filterChartDefinitionToLast24Hours(chart);
+    })
+    .filter(function (chart) {
+      return chart.timestamps.length && chartDefinitionSpansAtLeast(chart, 2 * 60 * 60 * 1000);
+    })
+    .sort(function (first, second) {
+      return first.title.localeCompare(second.title);
+    });
 }
 
 function isCoordinateField(fieldName) {
@@ -938,6 +936,27 @@ function filterChartDefinitionToLast24Hours(chartDefinition) {
   };
 }
 
+function chartDefinitionSpansAtLeast(chartDefinition, durationMs) {
+  const timestamps = chartDefinition.timestamps || [];
+  if (timestamps.length < 2) {
+    return false;
+  }
+
+  const parsedTimestamps = timestamps.map(function (timestamp) {
+    const date = new Date(timestamp);
+    return Number.isNaN(date.getTime()) ? null : date;
+  }).filter(function (date) {
+    return date !== null;
+  });
+
+  if (parsedTimestamps.length < 2) {
+    return false;
+  }
+
+  const span = parsedTimestamps[parsedTimestamps.length - 1].getTime() - parsedTimestamps[0].getTime();
+  return span >= durationMs;
+}
+
 function filterPointsToLast24Hours(points) {
   if (!points.length) {
     return [];
@@ -995,7 +1014,7 @@ function createChartCard(chartDefinition) {
   showButton.type = "button";
   showButton.textContent = "Show in DNV";
   showButton.addEventListener("click", function () {
-    showTreeNode(getLastDnvCode(chartDefinition.dnvPath));
+    showTreeNode(getLastDnvCode(chartDefinition.dnvPath), chartDefinition.dnvPath);
   });
 
   heading.appendChild(titleBox);
@@ -1570,7 +1589,7 @@ function findPathFromRoot(targetCode) {
   return [];
 }
 
-function showTreeNode(code) {
+function showTreeNode(code, dnvPath) {
   if (!code) {
     return;
   }
@@ -1599,10 +1618,12 @@ function showTreeNode(code) {
   }
 
   if (currentNode) {
+    clearActiveTreeDownloadButton();
     document.querySelectorAll(".tree-focus").forEach(function (node) {
       node.classList.remove("tree-focus");
     });
     currentNode.classList.add("tree-focus");
+    attachSourceDownloadButtonToTreeNode(currentNode, dnvPath || getFullDnvPathForCode(code));
     currentNode.scrollIntoView({ behavior: "smooth", block: "center" });
     window.setTimeout(function () {
       currentNode.classList.remove("tree-focus");
@@ -1614,6 +1635,64 @@ function findDirectTreeNode(container, code) {
   return Array.from(container.children).find(function (child) {
     return child.classList.contains("tree-node") && child.dataset.code === code;
   });
+}
+
+function clearActiveTreeDownloadButton() {
+  document.querySelectorAll(".tree-download-button").forEach(function (button) {
+    button.remove();
+  });
+}
+
+function attachSourceDownloadButtonToTreeNode(node, dnvPath) {
+  if (!dnvPath) {
+    return;
+  }
+
+  const source = getSourceForDnvPath(sourceLinkData, dnvPath, selectedSection);
+
+  if (!source || !source.url) {
+    return;
+  }
+
+  const row = node.querySelector(":scope > .tree-row");
+
+  if (!row) {
+    return;
+  }
+
+  const downloadLink = document.createElement("a");
+  downloadLink.className = "tree-download-button";
+  downloadLink.href = source.url;
+  downloadLink.download = source.file;
+  downloadLink.textContent = "Download source";
+  downloadLink.title = "Download " + source.file;
+  row.appendChild(downloadLink);
+}
+
+function getFullDnvPathForCode(code) {
+  for (const records of measurementRecordsByCode.values()) {
+    for (const record of records) {
+      const codes = getDnvPathCodes(record.dnvPath);
+
+      if (codes[codes.length - 1] === code) {
+        return record.dnvPath;
+      }
+    }
+  }
+
+  for (const link of sourceLinkData.links || []) {
+    if (!isLinkForSection(link, selectedSection)) {
+      continue;
+    }
+
+    const codes = getDnvPathCodes(link.dnv_path);
+
+    if (codes[codes.length - 1] === code) {
+      return link.dnv_path;
+    }
+  }
+
+  return null;
 }
 
 function openSectionFromUrl() {
