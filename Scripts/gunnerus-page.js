@@ -494,6 +494,7 @@ function buildMeasurementRecords(data, sectionName) {
         name: formatFieldName(field.field),
         unit: field.unit || "",
         dnvPath: field.dnv_path,
+        source_file: dataset.source_file || null,
         dataset: dataset.signal_group || "Gunnerus data"
       });
       recordsByCode.set(code, records);
@@ -594,6 +595,7 @@ function createStandardChartDefinitions(data, sectionName) {
         subtitle: dataset.signal_group || dataset.source_file || "Gunnerus data",
         unit: field.unit || "",
         dnvPath: field.dnv_path || "DNV not found",
+        source_file: dataset.source_file || null,
         timestamps: timestamps,
         series: [{
           name: formatFieldName(field.field),
@@ -647,6 +649,7 @@ function createEngineChartDefinitions(data) {
         values: dataset.timeseries && dataset.timeseries[field.field] || [],
         color: CHART_COLORS[engineNumber - 1]
       });
+      chart.source_file = dataset.source_file || chart.source_file || null;
     });
   });
 
@@ -1014,7 +1017,7 @@ function createChartCard(chartDefinition) {
   showButton.type = "button";
   showButton.textContent = "Show in DNV";
   showButton.addEventListener("click", function () {
-    showTreeNode(getLastDnvCode(chartDefinition.dnvPath), chartDefinition.dnvPath);
+    showTreeNode(getLastDnvCode(chartDefinition.dnvPath), chartDefinition.dnvPath, chartDefinition.source_file);
   });
 
   heading.appendChild(titleBox);
@@ -1457,7 +1460,8 @@ function updateTreeRowValue(row, code) {
       appendClickableTreeValue(
         values,
         record.name + (record.unit ? " (" + record.unit + ")" : ""),
-        record.dnvPath
+        record.dnvPath,
+        record.source_file
       );
     });
 
@@ -1469,11 +1473,24 @@ function updateTreeRowValue(row, code) {
   }
 }
 
-function appendClickableTreeValue(container, text, dnvPath) {
-  const source = getSourceForDnvPath(sourceLinkData, dnvPath, selectedSection);
+function appendClickableTreeValue(container, text, dnvPath, sourceFile) {
+  let source = null;
+
+  if (sourceFile) {
+    const baseUrl = new URL(sourceLinkData.linkFileUrl, window.location.href);
+    source = {
+      file: sourceFile,
+      url: new URL((sourceLinkData.raw_data_folder || "../raw_DATA/") + sourceFile, baseUrl).href
+    };
+  }
+
+  if ((!source || !source.url) && dnvPath) {
+    source = getSourceForDnvPath(sourceLinkData, dnvPath, selectedSection);
+  }
+
   let value;
 
-  if (source) {
+  if (source && source.url) {
     value = document.createElement("a");
     value.href = source.url;
     value.download = source.file;
@@ -1589,7 +1606,7 @@ function findPathFromRoot(targetCode) {
   return [];
 }
 
-function showTreeNode(code, dnvPath) {
+function showTreeNode(code, dnvPath, sourceFile) {
   if (!code) {
     return;
   }
@@ -1623,7 +1640,7 @@ function showTreeNode(code, dnvPath) {
       node.classList.remove("tree-focus");
     });
     currentNode.classList.add("tree-focus");
-    attachSourceDownloadButtonToTreeNode(currentNode, dnvPath || getFullDnvPathForCode(code));
+    attachSourceDownloadButtonToTreeNode(currentNode, dnvPath || getFullDnvPathForCode(code), sourceFile);
     currentNode.scrollIntoView({ behavior: "smooth", block: "center" });
     window.setTimeout(function () {
       currentNode.classList.remove("tree-focus");
@@ -1643,12 +1660,24 @@ function clearActiveTreeDownloadButton() {
   });
 }
 
-function attachSourceDownloadButtonToTreeNode(node, dnvPath) {
-  if (!dnvPath) {
+function attachSourceDownloadButtonToTreeNode(node, dnvPath, sourceFile) {
+  if (!dnvPath && !sourceFile) {
     return;
   }
 
-  const source = getSourceForDnvPath(sourceLinkData, dnvPath, selectedSection);
+  let source = null;
+
+  if (sourceFile) {
+    const baseUrl = new URL(sourceLinkData.linkFileUrl, window.location.href);
+    source = {
+      file: sourceFile,
+      url: new URL((sourceLinkData.raw_data_folder || "../raw_DATA/") + sourceFile, baseUrl).href
+    };
+  }
+
+  if ((!source || !source.url) && dnvPath) {
+    source = getSourceForDnvPath(sourceLinkData, dnvPath, selectedSection);
+  }
 
   if (!source || !source.url) {
     return;
