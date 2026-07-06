@@ -107,7 +107,7 @@
           "attribute_name": "designer",
           "display_name": "Designer",
           "value_text": "Hyundai Samho Heavy Industries Co. Ltd",
-          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.1",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/1",
           "proposed_extension_if_missing": "not specified in document"
         }
       ],
@@ -830,7 +830,7 @@
           "display_name": "Other Cranes Tasks",
           "value_text": "Engine room crane",
           "taxonomy_node_id": "design_data.propulsion_steering",
-          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.4",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/4",
           "proposed_extension_if_missing": "not specified in document"
         }
       ],
@@ -852,7 +852,7 @@
           "attribute_name": "other_cranes_performance",
           "display_name": "Other Cranes Performance",
           "value_text": "10t SWL",
-          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/2",
           "proposed_extension_if_missing": "not specified in document"
         }
       ],
@@ -969,7 +969,7 @@
           "attribute_name": "cargo_pumps_number",
           "display_name": "Number",
           "value_text": "3",
-          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/2",
           "proposed_extension_if_missing": "not specified in document"
         },
         {
@@ -978,6 +978,13 @@
           "value_text": "KV450-4",
           "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.2",
           "proposed_extension_if_missing": "not specified in document"
+        },
+        {
+          "attribute_name": "TESTING IF NEW ONE APPEARS",
+          "display_name": "Type",
+          "value_text": "KV450-4",
+          "DNV_source": "/dnv-v2/vis-3-10a/800a/860/861/861.2/861.21/G52/G52.5",
+          "proposed_extension_if_missing": "Lala ficou lele porque Lili deu o Lolo para Lulu"
         },
         {
           "attribute_name": "cargo_pumps_make",
