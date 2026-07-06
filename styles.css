@@ -240,7 +240,7 @@ hr {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 12px;
-  height: var(--raw-files-height);
+  min-height: var(--raw-files-height);
   padding: 12px 12px 0;
 }
 
@@ -702,14 +702,16 @@ hr {
   flex: 1;
   overflow: auto;
   padding: 4px 14px 35px;
+  min-width: 0;
 }
 
 .tree-node {
-  min-width: max-content;
+  min-width: 0;
 }
 
 .tree-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   gap: 7px;
   min-height: 31px;
