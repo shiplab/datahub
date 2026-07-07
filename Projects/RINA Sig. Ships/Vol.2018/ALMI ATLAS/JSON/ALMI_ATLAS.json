@@ -1,42 +1,6 @@
 {
-  "format_note": "Static vessel-design data. Each entry stores its value directly in Value. Source context preserves all group and item metadata from the original Atlas JSON.",
-  "source_metadata": {
-    "document": {
-      "filename": "Atlas exemple.pdf",
-      "vessel_name": "Atlas",
-      "vessel_code": "ATLAS",
-      "data_family": "design_data",
-      "document_type": "tank_plan",
-      "source_file_id": 26,
-      "version": 1,
-      "extraction_source": "AI"
-    },
-    "summary": "Editable D2 JSON draft for human review.",
-    "general_information": "The Atlas is a very large crude carrier (VLCC) vessel with IMO number 9816323, built by Hyundai Samho Heavy Industries Co. Ltd. in the Republic of Korea and owned by Almi Tankers from Greece. It features an Alfa Laval PureSOx ECA Open Loop U-type exhaust gas cleaning system and a Hyundai-built B&W 7G80ME-C9.5-EGRTC engine, making it one of the first VLCCs to feature a scrubber. The vessel has a gross tonnage of 162,306gt and a deadweight tonnage of 286,489dwt.",
-    "tanks": [],
-    "components": [],
-    "detected_vessels": [],
-    "warnings": [
-      "PDF text extraction succeeded.",
-      "AI context selected page(s): 1, 3.",
-      "Automatic route selected document_type=tank_plan, data_family=design_data.",
-      "DNV source index refreshed from Excel with 7277 entries.",
-      "The local AI did not return usable JSON, so the app created a structured editable draft from parser data."
-    ],
-    "missing_information": [],
-    "taxonomy_extension_requests": [],
-    "dnv_gmod_reference": {
-      "standard": {
-        "name": "DNV_GMOD_INTERNAL_DEFAULT",
-        "version": "0.1",
-        "description": "Default maritime taxonomy used by the application for vessel data extraction, validation and classification.",
-        "rule": "AI must classify extracted data using this taxonomy first. Missing categories must be proposed as extensions, not invented as final nodes."
-      },
-      "unknown_node": "unclassified.pending_review"
-    },
-    "ai_status": "AI_JSON_UNAVAILABLE"
-  },
-  "series": [
+  "summary": "The Atlas is a very large crude carrier (VLCC) vessel with IMO number 9816323, built by Hyundai Samho Heavy Industries Co. Ltd. in the Republic of Korea and owned by Almi Tankers from Greece. It features an Alfa Laval PureSOx ECA Open Loop U-type exhaust gas cleaning system and a Hyundai-built B&W 7G80ME-C9.5-EGRTC engine, making it one of the first VLCCs to feature a scrubber. The vessel has a gross tonnage of 162,306gt and a deadweight tonnage of 286,489dwt.",
+  "vessel_info": [
     {
       "Name": "shipbuilder",
       "Link": "../raw_DATA/ALMI ATLAS.pdf",
@@ -723,7 +687,7 @@
       "Name": "daily_fuel_consumption_tonnes_day_main_engine_only",
       "Link": "../raw_DATA/ALMI ATLAS.pdf",
       "DNV_path": "/dnv-v2/vis-3-10a/600a/620/620.1/M201/M201.3",
-      "Value": "169.59 g/kW·hr (MCR) g/kW·hr",
+      "Value": "169.59 g/kWÂ·hr (MCR) g/kWÂ·hr",
       "source_context": {
         "group": {
           "group_name": "daily_fuel_consumption",

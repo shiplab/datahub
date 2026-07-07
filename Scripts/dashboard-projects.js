@@ -10,8 +10,7 @@
 (function () {
   const BLOCK_FILES = [
     "Blocs/Rina_blocs.html",
-    "Blocs/Gunnerus_blocs.html",
-    "Blocs/test_bloc.html"
+    "Blocs/Gunnerus_blocs.html"
   ];
 
   const blocksContainer = document.getElementById("project-blocks");

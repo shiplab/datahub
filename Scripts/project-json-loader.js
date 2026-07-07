@@ -11,6 +11,10 @@
   If the same information appears several times with different links, this
   loader merges it into one entry and keeps all source links together. This
   lets the website show one information block and one DNV value only.
+
+  Supported top-level project structures:
+  - { "series": [...] }
+  - { "summary": "...", "vessel_info": [...] }
 */
 window.ProjectJsonLoader = (function () {
   function hasDnvPath(path) {
@@ -127,6 +131,25 @@ window.ProjectJsonLoader = (function () {
     return mergedSeries;
   }
 
+  function readProjectEntries(raw) {
+    if (Array.isArray(raw.vessel_info)) {
+      return raw.vessel_info;
+    }
+
+    if (Array.isArray(raw.series)) {
+      return raw.series;
+    }
+
+    return [];
+  }
+
+  function readProjectSummary(raw) {
+    return raw.summary ||
+      raw.source_metadata && raw.source_metadata.general_information ||
+      raw.source_metadata && raw.source_metadata.summary ||
+      "";
+  }
+
   async function load(project) {
     const jsonUrl = new URL("../" + project.jsonPath, window.location.href);
     const response = await fetch(jsonUrl);
@@ -136,7 +159,7 @@ window.ProjectJsonLoader = (function () {
     }
 
     const raw = await response.json();
-    const normalizedSeries = (raw.series || []).map(function (entry, index) {
+    const normalizedSeries = readProjectEntries(raw).map(function (entry, index) {
       return normalizeSeries(entry, index, jsonUrl);
     });
     const series = mergeSeriesList(normalizedSeries);
@@ -147,7 +170,7 @@ window.ProjectJsonLoader = (function () {
       jsonUrl: jsonUrl.href,
       series: series,
       timeAxes: raw.time_axes || {},
-      summary: raw.source_metadata && raw.source_metadata.summary || ""
+      summary: readProjectSummary(raw)
     };
   }
 
