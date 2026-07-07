@@ -889,6 +889,54 @@ button.tree-vessel-value:hover {
   background: var(--green);
 }
 
+.tree-source-menu {
+  min-width: 0;
+}
+
+.tree-source-menu > summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.tree-source-menu > summary::-webkit-details-marker {
+  display: none;
+}
+
+.tree-source-menu > summary::after {
+  margin-left: 6px;
+  content: "\25BC";
+  font-size: 0.65rem;
+}
+
+.tree-source-menu[open] > summary::after {
+  content: "\25B2";
+}
+
+.tree-source-list {
+  display: grid;
+  gap: 4px;
+  margin-top: 4px;
+  padding: 6px;
+  border: 1px solid var(--green);
+  border-radius: 4px;
+  background: white;
+  box-shadow: 0 3px 8px rgba(28, 55, 68, 0.14);
+}
+
+.tree-source-option {
+  padding: 5px 7px;
+  border-radius: 3px;
+  color: var(--navy);
+  background: var(--light-green);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.tree-source-option:hover {
+  color: white;
+  background: var(--green);
+}
+
 .source-message-box {
   position: fixed;
   right: 20px;

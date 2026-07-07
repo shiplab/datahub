@@ -1,7 +1,8 @@
 /*
   This file builds the filtered DNV tree shown on the right side.
   It keeps only branches used by the current project. Every green project
-  value is an ordinary link whose address comes directly from Link in JSON.
+  value gets its source directly from Link in JSON. With several sources, one
+  green value opens a small list instead of duplicating the information.
 
   To use a newer DNV release, change DNV_DATA_FILE and the path validation in
   project-json-loader.js. Project values and sources should only be edited in
@@ -111,18 +112,48 @@ window.ProjectDnvTree = (function () {
     }
   }
 
-  function createProjectValue(series) {
-    const value = series.sourceUrl ? document.createElement("a") : document.createElement("span");
-    const fixedValue = simpleValue(series);
-    value.className = "tree-vessel-value";
-    value.textContent = readableName(series.name) + (fixedValue ? ": " + fixedValue : "");
+  function createSourceLink(source) {
+    const link = document.createElement("a");
+    link.className = "tree-source-option";
+    link.href = source.url;
+    link.download = sourceFilename(source.url);
+    link.textContent = sourceFilename(source.url);
+    link.title = "Download " + sourceFilename(source.url);
+    return link;
+  }
 
-    if (series.sourceUrl) {
-      value.href = series.sourceUrl;
-      value.download = sourceFilename(series.sourceUrl);
-      value.title = "Open or download " + sourceFilename(series.sourceUrl);
+  function createProjectValue(series) {
+    const sources = series.sources || [];
+    const fixedValue = simpleValue(series);
+    const text = readableName(series.name) + (fixedValue ? ": " + fixedValue : "");
+
+    if (sources.length > 1) {
+      const menu = document.createElement("details");
+      menu.className = "tree-source-menu";
+
+      const summary = document.createElement("summary");
+      summary.className = "tree-vessel-value";
+      summary.textContent = text + " (" + sources.length + " sources)";
+      menu.appendChild(summary);
+
+      const list = document.createElement("span");
+      list.className = "tree-source-list";
+      sources.forEach(function (source) {
+        list.appendChild(createSourceLink(source));
+      });
+      menu.appendChild(list);
+      return menu;
     }
 
+    const value = sources.length ? document.createElement("a") : document.createElement("span");
+    value.className = "tree-vessel-value";
+    value.textContent = text;
+
+    if (sources.length === 1) {
+      value.href = sources[0].url;
+      value.download = sourceFilename(sources[0].url);
+      value.title = "Open or download " + sourceFilename(sources[0].url);
+    }
     return value;
   }
 

@@ -28,14 +28,21 @@ window.ProjectInformationDisplay = (function () {
     return series.timeSeries && (name.includes("latitude") || name.includes("longitude"));
   }
 
-  function sourceFilename(series) {
-    if (!series.sourceUrl) {
+  function sourceLabel(series) {
+    const sources = series.sources || [];
+
+    if (!sources.length) {
       return "No source link";
     }
+
+    if (sources.length > 1) {
+      return sources.length + " source files (open this information in the DNV tree)";
+    }
+
     try {
-      return decodeURIComponent(new URL(series.sourceUrl).pathname.split("/").pop());
+      return decodeURIComponent(new URL(sources[0].url).pathname.split("/").pop());
     } catch (error) {
-      return series.link;
+      return sources[0].link;
     }
   }
 
@@ -99,7 +106,7 @@ window.ProjectInformationDisplay = (function () {
     const heading = document.createElement("div");
     heading.className = "graph-heading";
     const source = document.createElement("p");
-    source.textContent = "Source: " + sourceFilename(series);
+    source.textContent = "Source: " + sourceLabel(series);
     heading.appendChild(source);
     const button = createShowDnvButton(series);
     if (button) {

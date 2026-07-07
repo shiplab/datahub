@@ -28,4 +28,12 @@ The other scripts each have one purpose: loading JSON, displaying information, d
 
 Every source link displayed in the DNV tree comes directly from the `Link` value of the corresponding JSON entry. Links are relative to the main JSON file, normally `../raw_DATA/filename`.
 
+An entry can contain several sources in the same field, separated by `;`:
+
+```json
+"Link": "../raw_DATA/source.pdf; ../raw_DATA/measurements.csv"
+```
+
+The DNV tree still displays one green information value. Clicking it opens the short list of source files to download.
+
 To add a project, create its dashboard block and `Projects/.../JSON` plus `raw_DATA` folders, then add one entry to `Scripts/project-config.js`. The common details page does not need to be copied.
