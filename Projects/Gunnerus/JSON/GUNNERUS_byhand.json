@@ -1,0 +1,1204 @@
+{
+  "format_note": "Each time_serie_data.values array is index-aligned with the shared axis identified by time_serie_data.time_axis in time_axes. Missing CSV cells are null. | Restructured: each unique Name appears once; Link lists all source files it appears in; time_serie_data is a list (max 3) of time series, each tagged with source_file, time_axis, time_range (start/end from the real timestamp axis) and n_points, so you can pick which one to plot.",
+  "series": [
+    {
+      "Name": "crane_1_dp_main_cyl",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.42",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Equipment for cargo"
+    },
+    {
+      "Name": "crane_1_extension_length_outer_boom",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.43",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Equipment for cargo"
+    },
+    {
+      "Name": "crane_1_main_boom_angle",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.41",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Equipment for cargo"
+    },
+    {
+      "Name": "crane_1_outer_boom_angle",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.4/C1063.43",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Equipment for cargo"
+    },
+    {
+      "Name": "crane_1_slewing_angle",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.3",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Equipment for cargo"
+    },
+    {
+      "Name": "engine_1_boost_pressure",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.66",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_coolant_temperature",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.63/S206",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_engine_load",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.71/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_engine_speed",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.73/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_exhaust_temperature1",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_exhaust_temperature2",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_fuel_consumption",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.61/S203",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_lube_oil_pressure",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_1_lube_oil_temperature",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_boost_pressure",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.66",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_coolant_temperature",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.63/S206",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_engine_load",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.71/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_engine_speed",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.73/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_exhaust_temperature1",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_exhaust_temperature2",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_fuel_consumption",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.61/S203",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_lube_oil_pressure",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_2_lube_oil_temperature",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_boost_pressure",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.66",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_coolant_temperature",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.63/S206",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_engine_load",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.71/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_engine_speed",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.73/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_exhaust_temperature1",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_exhaust_temperature2",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.65/S210",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_fuel_consumption",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.61/S203",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_lube_oil_pressure",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "engine_3_lube_oil_temperature",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/410/411/411i/411.1/CS1/C101/C101.62/S205",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location": "Machinery main components"
+    },
+    {
+      "Name": "latitude",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv",
+        "../raw_DATA/crane_accelerometre_data.csv"
+        
+      ],
+      "location":"Hull"
+
+    },
+    {
+      "Name": "longitude",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv",
+        "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "longitudinal_ground_speed",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "transverse_ground_speed",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "true_course",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "speed_over_ground_km_h",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "speed_over_ground_knots",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "heading",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "heave",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "pitch",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "roll",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "pitch_rate",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "roll_rate",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "vertical_velocity",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "yaw_rate",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv",
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "speed_through_water_east_component",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.1/NS1",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "speed_through_water_north_component",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.1/NS1",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "dynamic_positioning_thruster_feedback_prosent",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/450/451/451.1/451.11/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "dynamic_positioning_thruster_thruster_setpunkt_prosent",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/450/451/451.1/451.11/I101",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "wind_direction",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.1",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "wind_speed",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.1",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "port_main_propulsion_azimuth_feedback",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.3",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_azimuth_order",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.3",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_level_order",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_load_feedback",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_maneuver_transit_mode",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_power_mode_rpm_mode",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_rpm_feedback",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_rpm_order",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "port_main_propulsion_running",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_azimuth_feedback",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.3",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_azimuth_order",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.3",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_level_order",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_load_feedback",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_maneuver_transit_mode",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_power_mode_rpm_mode",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_rpm_feedback",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_rpm_order",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "starboard_main_propulsion_running",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/430/430i/433/433.1/CS8/C322/C322.9/C322.93",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Machinery main components"
+    },
+    {
+      "Name": "current_speed_east_vector",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.4",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "current_speed_north_vector",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.4",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "mean_period",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "primary_wave_mean_direction",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "primary_wave_peak_direction",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "primary_wave_peak_period",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "significant_wave_height",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "significant_wave_period",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "total_energy_directional_spread",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "total_energy_mean_direction",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/vessel_data_from_NUC_Gunnerus_W44.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "epoch_timestamp",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ]
+    },
+    {
+      "Name": "altitude",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv",
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "north_velocity",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "east_velocity",
+      "DNV_path": "/dnv-v2/vis-3-10a/400a/460/461/I101",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "air_gap",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Hull"
+    },
+    {
+      "Name": "significant_wave_height_wavex",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "significant_wave_height_range_finder",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "wave_directional_spectrum",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "significant_wave_height_calculated",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "mean_wave_direction_calculated",
+      "DNV_path": "/dnv-v2/vis-3-10a/900a/940/940.1/F221/F221.2",
+      "Link": [
+        "../raw_DATA/time_series_motion_prediction_data.csv"
+      ],
+      "location":"Environment"
+    },
+    {
+      "Name": "crane_logging_sample",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_timestamp",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ]
+    },
+    {
+      "Name": "speed_over_ground",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_speed_accuracy",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/713/713.2/NS1/N63",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_course_accuracy",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_vertical_accuracy",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_horizontal_accuracy",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/711/NS3/N33",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_floor",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_heading_timestamp_since1970",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_heading_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/712/712.1/712.12",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_heading_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/712/712.1/712.12",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_heading_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/712/712.1/712.12",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_true_heading",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/712/712.1/712.11",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_magnetic_heading",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/712/712.1/712.12",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_location_heading_accuracy",
+      "DNV_path": "/dnv-v2/vis-3-10a/700a/710/712/712.1/712.12",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_accelerometer_timestamp_since_reboot",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_accelerometer_acceleration_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_accelerometer_acceleration_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_accelerometer_acceleration_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_gyro_timestamp_since_reboot",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_gyro_rotation_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_gyro_rotation_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_gyro_rotation_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_magnetometer_timestamp_since_reboot",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_magnetometer_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_magnetometer_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_magnetometer_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_timestamp_since_reboot",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_yaw",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_roll",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_pitch",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_rotation_rate_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_rotation_rate_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_rotation_rate_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+
+    },
+    {
+      "Name": "crane_motion_user_acceleration_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_user_acceleration_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_user_acceleration_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_attitude_reference_frame",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_quaternion_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_quaternion_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_quaternion_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_quaternion_w",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_gravity_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_gravity_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_gravity_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_magnetic_field_x",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_magnetic_field_y",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_magnetic_field_z",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_heading",
+      "DNV_path": "/dnv-v2/vis-3-10a/300a/330/331/331.1/331.1i/331.11/CS17/C1063/C1063.8/I101",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_motion_magnetic_field_calibration_accuracy",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_activity_timestamp_since_reboot",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_activity",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_activity_activity_confidence",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_activity_activity_start_date",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_pedometer_start_date",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_pedometer_numberof_steps",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    },
+    {
+      "Name": "crane_pedometer_average_active_pace",
+      "DNV_path": "No direct DNV VIS path",
+      "Link": [
+       "../raw_DATA/crane_accelerometre_data.csv"
+      ],
+      "location":"Equipment for cargo"
+    }
+    
+] }
