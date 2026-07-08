@@ -20,7 +20,6 @@ window.ProjectConfig = {
       id: "gunnerus",
       name: "Gunnerus",
       dashboardListId: "gunnerus-vessel-links",
-      jsonPath: "Projects/Gunnerus/JSON/GUNNERUS.json"
     }
   ],
 
